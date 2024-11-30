@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a8087be870bc645358c87098ba0a1f94
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272037
+  packageName: Easy Flying System
+  packageVersion: 2.0.2
+  assetPath: Assets/RageRun Games/Easy Flying System/Scripts/Inputs/KeyboardInputHandler.cs
+  uploadId: 707282

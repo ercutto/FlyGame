@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 397fef180574f40449055f46725ea9b4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Roboto
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272037
+  packageName: Easy Flying System
+  packageVersion: 2.0.2
+  assetPath: Assets/RageRun Games/Easy Flying System/Fonts/Roboto-Regular.ttf
+  uploadId: 707282

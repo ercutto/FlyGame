@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 360edd09eaf968b43bb81998a9ca9256
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272037
+  packageName: Easy Flying System
+  packageVersion: 2.0.2
+  assetPath: Assets/RageRun Games/Easy Flying System/Scripts/Inputs/MouseInputHandler.cs
+  uploadId: 707282

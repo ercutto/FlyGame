@@ -1,0 +1,297 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &433889360523020883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221556170340163952}
+  - component: {fileID: 1415246675327401519}
+  - component: {fileID: 4825975750043162158}
+  - component: {fileID: 3453676167259500472}
+  - component: {fileID: 8518274196866468878}
+  - component: {fileID: 6005003496779688672}
+  m_Layer: 0
+  m_Name: Drone Controller 3D (Fully Mouse Controllable)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &221556170340163952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433889360523020883}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 684266199246901590}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1415246675327401519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433889360523020883}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0.5
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 1
+--- !u!65 &4825975750043162158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433889360523020883}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.73, y: 0.98171294, z: 2.5}
+  m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &3453676167259500472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433889360523020883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1a86da4961e4979b47cf75222bcd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 80
+  autoForwardMovement: 0
+  pitchAmount: 30
+  rollAmount: 30
+  yawAmount: 4
+  rotationLerpSpeed: 2
+  disableYaw: 0
+  disablePitch: 0
+  disableRoll: 0
+  ignoreRotationLimits: 0
+  pitchRotationLimit: {x: -30, y: 30}
+  rollRotationLimit: {x: -30, y: 30}
+  inputType: 2
+  maintainAltitude: 1
+  useGravityOnNoInput: 0
+  enableHover: 0
+  hoverAmplitude: 1.25
+  hoverFrequency: 2
+  groundCheckDistance: 1
+  decelerateOnGround: 0
+  decelSpeedOnGround: 5
+--- !u!114 &8518274196866468878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433889360523020883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852f1772ccc4ef6b0310777f812964f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droneController: {fileID: 3453676167259500472}
+  rotors:
+  - rotor:
+      rotorTransform: {fileID: 4616488604210614693}
+      rotationAxis: {x: 0, y: 1, z: 0}
+      speed: 1500
+      rotationSpeed: 1500
+      inverseRotation: 0
+  - rotor:
+      rotorTransform: {fileID: 6414168585090908003}
+      rotationAxis: {x: 0, y: 1, z: 0}
+      speed: 1500
+      rotationSpeed: 1500
+      inverseRotation: 1
+  - rotor:
+      rotorTransform: {fileID: 3272165061604661432}
+      rotationAxis: {x: 0, y: 1, z: 0}
+      speed: 1500
+      rotationSpeed: 1500
+      inverseRotation: 1
+  - rotor:
+      rotorTransform: {fileID: 4773625836749883655}
+      rotationAxis: {x: 0, y: 1, z: 0}
+      speed: 1500
+      rotationSpeed: 1500
+      inverseRotation: 0
+--- !u!114 &6005003496779688672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433889360523020883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c36d548e4b44251a38dbaedfdb1eb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  liftInputType: 0
+  _deadZoneRadius: 0.1
+  scrollLiftSpeed: 25
+  inputLerpSpeed: 5
+  keyInputs:
+    rollLeft: 97
+    rollRight: 100
+    pitchForward: 119
+    pitchBackward: 115
+    yawLeft: 323
+    yawRight: 324
+    liftUp: 273
+    liftDown: 274
+--- !u!1001 &5482339801757313087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 221556170340163952}
+    m_Modifications:
+    - target: {fileID: 4794393903294868161, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acd9dde7f038cee42964e5eda2bde283, type: 2}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630062311409558483, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_Name
+      value: Drone 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134188187281392134, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acd9dde7f038cee42964e5eda2bde283, type: 2}
+    - target: {fileID: 6597537244754064531, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acd9dde7f038cee42964e5eda2bde283, type: 2}
+    - target: {fileID: 6630769609731428591, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acd9dde7f038cee42964e5eda2bde283, type: 2}
+    - target: {fileID: 7640414402362338140, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acd9dde7f038cee42964e5eda2bde283, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+--- !u!4 &684266199246901590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5001862543024716137, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+  m_PrefabInstance: {fileID: 5482339801757313087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3272165061604661432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7024559654178467975, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+  m_PrefabInstance: {fileID: 5482339801757313087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4616488604210614693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 865853234502580634, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+  m_PrefabInstance: {fileID: 5482339801757313087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4773625836749883655 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1020765055557329208, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+  m_PrefabInstance: {fileID: 5482339801757313087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6414168585090908003 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1519572730543527772, guid: 1630bb83cc388c94da0836ba89a656f7, type: 3}
+  m_PrefabInstance: {fileID: 5482339801757313087}
+  m_PrefabAsset: {fileID: 0}
