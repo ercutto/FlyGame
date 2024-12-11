@@ -5,8 +5,10 @@ namespace RageRunGames.EasyFlyingSystem
 {
     public class BaseFlyController : MonoBehaviour
     {
-        [Header("Engine Settings")] 
+        [Header("Engine Settings")]
         [SerializeField] protected float maxSpeed = 30;
+         [SerializeField] protected float maxLiftSpeed = 30;
+
         [SerializeField] protected bool autoForwardMovement;
         
         [Header("Controller Settings")] 
@@ -26,6 +28,10 @@ namespace RageRunGames.EasyFlyingSystem
         [SerializeField] protected bool ignoreRotationLimits; 
         [SerializeField] protected Vector2 pitchRotationLimit = new Vector2(-30f, 30f);
         [SerializeField] protected Vector2 rollRotationLimit = new Vector2(-30f, 30f);
+        [Header("GraphicRotation Limits")]
+        [SerializeField] protected Vector2 graphicPitchLimit = new Vector2(-30f, 30f);
+
+        protected float currentGraphicPitch;
 
         protected Rigidbody rb;
         public Rigidbody Rb => rb;
@@ -92,6 +98,8 @@ namespace RageRunGames.EasyFlyingSystem
             currentPitch = disablePitch ? 0f : SmoothLerpValue(currentPitch, pitch, rotationLerpSpeed);
             currentRoll = disableRoll ? 0f : SmoothLerpValue(currentRoll, roll, rotationLerpSpeed);
             currentYaw = disableYaw ? 0f : SmoothLerpValue(currentYaw, yaw, rotationLerpSpeed);
+            //graphic rot
+            currentGraphicPitch= SmoothLerpValue(currentGraphicPitch, pitch, rotationLerpSpeed);
 
             if (!ignoreRotationLimits)
             {

@@ -13,6 +13,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         public void HandleInputs()
         {
+            
             if (Input.GetKey(keyInputs.rollRight))
             {
                 Roll = Mathf.Lerp(Roll, 1f, Time.deltaTime * lerpSpeed);
@@ -66,6 +67,8 @@ namespace RageRunGames.EasyFlyingSystem
             else
             {
                 Lift = Mathf.Lerp(Lift, 0f, Time.deltaTime * releaseLerpSpeed);
+                //tuslamayinca sabitleme
+                //Lift = 0;
             }
             
             EvaluateAnyKeyDown();

@@ -25,6 +25,12 @@ namespace RageRunGames.EasyFlyingSystem
         [SerializeField] protected float groundCheckDistance = 0.2f;
         [SerializeField] protected bool decelerateOnGround;
         [SerializeField] protected float decelSpeedOnGround = 4f;
+        /// <summary>
+        /// Bu graphic yönune haraketi engelemek icin.
+        /// </summary>
+        [SerializeField] protected bool onlyGraphichPitch = false;
+        [SerializeField] protected GameObject graphics = null;
+        
 
 
         private float timer;
@@ -59,14 +65,25 @@ namespace RageRunGames.EasyFlyingSystem
         protected override void HandleRotations()
         {
             base.HandleRotations();
-            
+
             if (autoForwardMovement)
             {
                 currentPitch = pitchAmount;
             }
 
-            Quaternion currentRotation = Quaternion.Euler(currentPitch, currentYaw, currentRoll);
-            rb.MoveRotation(currentRotation);
+            if (!onlyGraphichPitch) { 
+                Quaternion currentRotation = Quaternion.Euler(currentPitch, currentYaw, currentRoll);
+                rb.MoveRotation(currentRotation);
+            }
+            else
+            {
+                
+                Quaternion currentGraphicRotation= Quaternion.Euler(currentGraphicPitch,currentYaw ,currentRoll);
+                Quaternion currentRotation = Quaternion.Euler(currentPitch, currentYaw, currentRoll);
+                graphics.gameObject.transform.rotation = currentGraphicRotation;
+                rb.MoveRotation(currentRotation);
+            }
+
         }
 
         protected override void UpdateMovement(IInputHandler inputHandler)
@@ -82,11 +99,11 @@ namespace RageRunGames.EasyFlyingSystem
 
             if (!useGravityOnNoInput)
             {
-                upwardForce = rb.mass * Physics.gravity.magnitude + gravityMagnitude + inputHandler.Lift * maxSpeed;
+                upwardForce = rb.mass * Physics.gravity.magnitude + gravityMagnitude + inputHandler.Lift * maxLiftSpeed;
             }
             else
             {
-                upwardForce = inputHandler.Lift * maxSpeed;
+                upwardForce = inputHandler.Lift * maxLiftSpeed;
             }
 
             Vector3 liftForce = Vector3.up * upwardForce;
