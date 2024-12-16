@@ -1,30 +1,21 @@
 using UnityEngine;
-
-public class SendScore : MonoBehaviour
+namespace RageRunGames.EasyFlyingSystem
 {
-    public BoxCollider col=null;
-    private Rigidbody rb=null;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Start()
+    public class SendScore : MonoBehaviour
     {
-     
-            
-            rb = GetComponentInParent<Rigidbody>();
-        
-    }
-
-    // Update is called once per frame
-    public void FixedUpdate()
-    {
-
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Obstacle")
+        public BoxCollider col = null;
+        private Rigidbody rb = null;
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        public void Start()
         {
-            ScoreManager.instance.TakeDamage(-10);
-
+            rb = GetComponentInParent<Rigidbody>();
         }
+
+        public void SendScoreToScoreManager(float score)
+        {
+            StatsManager.instance.AddScore(score);
+        }
+
+
     }
 }

@@ -1,20 +1,30 @@
 using UnityEngine;
-
-public class Target :MonoBehaviour
+using UnityEngine.UI;
+namespace RageRunGames.EasyFlyingSystem
 {
-    public GameObject destination=null;
-    public BoxCollider coll=null;
-
-    public void OnTriggerEnter(Collider other)
+    public class Target : MonoBehaviour
     {
-        if (other.gameObject == destination)
+        public string player = "Player";
+        public Text IndexText;
+        public int index = 0;
+        public bool destinationReached = false;
+        public float scoreAmount = 100;
+        public GameObject canvas;
+
+
+        public void OnTriggerEnter(Collider other)
         {
+            if (other.gameObject.CompareTag(player))
+            {
 
-            Debug.Log("Destination has been reached!");
-            destination.GetComponent<Collider>().enabled = false;
-            ScoreManager.instance.AddScore(100);
+                TargetManager.instance.CheckDestination(index, scoreAmount);
+
+            }
+
+
+
+
         }
-        
-    }
 
+    }
 }

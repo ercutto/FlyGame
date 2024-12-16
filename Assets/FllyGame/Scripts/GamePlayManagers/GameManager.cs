@@ -1,29 +1,34 @@
 using UnityEngine;
-
-public class GameManager : MonoBehaviour
+namespace RageRunGames.EasyFlyingSystem
 {
-    public static GameManager instance;
-    public GameObject player=null;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Invoke()
+    public class GameManager : MonoBehaviour
     {
-        if (instance)
+        public static GameManager instance;
+        //public GameObject player=null;
+        public Camera displayCamera = null;
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        public void Awake()
         {
-            Destroy(gameObject);
-            return;
+            if (instance)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            instance = this;
+
+            DontDestroyOnLoad(gameObject);
+
+
         }
-        instance = this;
+        public void Start()
+        {
 
+        }
 
-    }
-    public void Start()
-    {
-        
-    }
+        // Update is called once per frame
+        void Update()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }
