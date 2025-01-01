@@ -16,6 +16,7 @@ namespace RageRunGames.EasyFlyingSystem
                 return;
             }
             instance = this;
+            
 
             Invoke(nameof(WriteToTargetsUI), 2);
 
@@ -30,7 +31,15 @@ namespace RageRunGames.EasyFlyingSystem
 
         public void WriteToTargetsUI()
         {
-            cam = GameManager.instance.displayCamera;
+            if (!GameManager.instance)
+            {
+                cam = Camera.main;
+            }
+            else
+            {
+                cam = GameManager.instance.displayCamera;
+            }
+
             for (int i = 0; i < Targets.Length; i++)
             {
 
@@ -103,6 +112,13 @@ namespace RageRunGames.EasyFlyingSystem
             }
 
             StatsManager.instance.AddScore(1000);
+
+            if (GameManager.instance)
+            { GameManager.instance.NextStage(); }
+            else
+            {
+                ScenesManager.instance.SelectLevel(3);
+            }
         }
     }
 }

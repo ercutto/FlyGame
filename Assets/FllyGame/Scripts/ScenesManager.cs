@@ -4,12 +4,32 @@ namespace RageRunGames.EasyFlyingSystem
 {
     public class ScenesManager : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        public static ScenesManager instance;
+
+        private void Awake()
         {
-            SceneManager.LoadScene("DisplayScene", LoadSceneMode.Additive);
+            if (instance)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            instance = this;
+
+            DontDestroyOnLoad(instance);
+        }
+   
+        public void SelectLevel(int Stage)
+        {
+            if (GameManager.instance)
+            {
+                SceneManager.LoadScene(Stage);
+                SceneManager.LoadScene("DisplayScene", LoadSceneMode.Additive);
+            }
+            else
+            {
+                SceneManager.LoadScene(Stage);
+            }
         }
 
-       
     }
 }

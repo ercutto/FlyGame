@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 namespace RageRunGames.EasyFlyingSystem
@@ -24,15 +25,35 @@ namespace RageRunGames.EasyFlyingSystem
         public float MaxCharge = 100;
         private float minCharge = 0;
 
-        [Space]
+        
 
+        public enum GameMode
+        {
+            None,
+            Mission,
+            Post,
+        }
         public bool player;
+        [Header("Select Game mode")]
 
+        
+        [SerializeField]
+        public GameMode gameMode;
+        private byte mode = 1;
 
         public void Start()
         {
             instance = this;
 
+            if (MainStatManager.instance != null) 
+            {
+                MainStatManager.instance.stats=(MainStatManager.Stats)gameMode;
+               
+                //MainStatManager.instance.stats = (MainStatManager.Stats)mode;
+            }
+            
+           
+            
             ResetStats();
         }
 
@@ -41,6 +62,12 @@ namespace RageRunGames.EasyFlyingSystem
         {
             score += add;
             TypeTexts(scoreText, score);
+            mode = (byte)(MainStatManager.Stats)gameMode;
+            if (MainStatManager.instance != null)
+            {
+                MainStatManager.instance.Score(score, mode);
+            }
+           
 
         }
         public void TakeDamage(float add, bool isPlayer)
