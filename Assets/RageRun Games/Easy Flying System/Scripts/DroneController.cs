@@ -30,8 +30,10 @@ namespace RageRunGames.EasyFlyingSystem
         /// </summary>
         [SerializeField] protected bool onlyGraphichPitch = false;
         [SerializeField] protected GameObject graphics = null;
-        
 
+        public bool windforceOnUse=true;
+        public Vector3 windforce =Vector3.zero;
+        public float windSpeed = 0;
 
         private float timer;
 
@@ -131,7 +133,9 @@ namespace RageRunGames.EasyFlyingSystem
                 liftForce += Vector3.up * hoverForce;
             }
 
-            rb.AddForce(forwardForce + liftForce + sidewaysForce, ForceMode.Force);
+           
+
+            rb.AddForce(forwardForce + liftForce + sidewaysForce+(windforce*windSpeed), ForceMode.Force);
         }
 
         public InputType GetInputType()

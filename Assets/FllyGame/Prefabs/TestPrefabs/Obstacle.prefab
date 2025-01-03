@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 5
+  layerTocheck: Player
+  isSecurityCamera: 0
 --- !u!1 &2396573747277805399
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 5
+  layerTocheck: Player
+  isSecurityCamera: 0
 --- !u!1 &4114995015029188752
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 5
+  layerTocheck: Player
+  isSecurityCamera: 0
 --- !u!1 &5854711860955735574
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 5
+  layerTocheck: Player
+  isSecurityCamera: 0
 --- !u!1 &6528861637285728577
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,3 +505,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 5
+  layerTocheck: Player
+  isSecurityCamera: 0

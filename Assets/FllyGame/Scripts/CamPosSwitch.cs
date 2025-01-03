@@ -24,7 +24,7 @@ namespace RageRunGames.EasyFlyingSystem
         void FixedUpdate()
         {
             RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
+            // Does the ray intersect any objects excluding the currentLayer layer
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Distance, LayerMask))
 
             {
