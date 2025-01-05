@@ -8,6 +8,9 @@ public class Tester : MonoBehaviour
    
     
     public Wind wind=null;
+
+    public GameObject drone=null;
+    public GameObject drone2 = null;
     void Awake()
     {
         if (isTesting)
@@ -21,5 +24,12 @@ public class Tester : MonoBehaviour
 
     }
 
-  
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            drone.SetActive(false);
+            drone2.SetActive(true);
+        }
+    }
 }

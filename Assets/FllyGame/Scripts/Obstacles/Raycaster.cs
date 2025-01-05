@@ -5,7 +5,7 @@ namespace RageRunGames.EasyFlyingSystem
     {
         RaycastHit[] m_Results = new RaycastHit[5];
 
-        [Range(0.0f, 10.0f)] public float raycastDistance;
+        [Range(0.0f, 30.0f)] public float raycastDistance;
         LayerMask currentLayer;
 
         public string layerTocheck;
@@ -23,11 +23,7 @@ namespace RageRunGames.EasyFlyingSystem
 
 
         }
-        public void Update()
-        {
-
-        }
-        // Update is called once per frame
+ 
         void FixedUpdate()
         {
             if (isSecurityCamera)

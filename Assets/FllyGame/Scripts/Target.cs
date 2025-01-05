@@ -21,9 +21,6 @@ namespace RageRunGames.EasyFlyingSystem
 
             }
 
-
-
-
         }
 
     }

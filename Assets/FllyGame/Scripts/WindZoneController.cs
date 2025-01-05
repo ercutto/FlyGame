@@ -16,8 +16,8 @@ public class WindZoneController : MonoBehaviour
     void Start()
     {
         direct[0] = a;
-        direct[1]
-            = b; direct[2] = c;
+        direct[1] = b;
+        direct[2] = c;
         direct[3] = d;
 
         InvokeRepeating(nameof(CurrentDir), 4, 3);

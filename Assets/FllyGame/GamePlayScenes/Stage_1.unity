@@ -494,6 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTesting: 1
   wind: {fileID: 0}
+  drone: {fileID: 1802303638}
+  drone2: {fileID: 1980748118}
 --- !u!1 &119779838
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,57 +964,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1878003095}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &342372342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 342372343}
-  - component: {fileID: 342372344}
-  m_Layer: 8
-  m_Name: RaycasterForward
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &342372343
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342372342}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 51452201}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &342372344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342372342}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c915dc626d0fc514eadb7ca56f6f2592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastDistance: 10
-  layerTocheck: Wall
-  isSecurityCamera: 0
-  cameraSeesPlayer: 0
-  isUnderCower: 0
-  isForWind: 1
-  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &342553554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1069,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 500
-  field of view: 13.31332
+  field of view: 13.346533
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1145,7 +1096,7 @@ Transform:
   m_GameObject: {fileID: 342553554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.034, y: 0.71000004, z: 0}
+  m_LocalPosition: {x: -0.034, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2121,10 +2072,6 @@ MonoBehaviour:
   isOnWIndZone: 1
   windArea: {fileID: 0}
   raycasterLeft: {fileID: 1939989510}
-  raycasterRight: {fileID: 1436349067}
-  raycasterForward: {fileID: 342372344}
-  raycasterBack: {fileID: 1239416583}
-  windDirection: 2
 --- !u!1 &555966335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,15 +4917,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2813977791710443920, guid: 965301df55c249b4698e9baa47b54e24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1939989509}
-    - targetCorrespondingSourceObject: {fileID: 2813977791710443920, guid: 965301df55c249b4698e9baa47b54e24, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1436349066}
-    - targetCorrespondingSourceObject: {fileID: 2813977791710443920, guid: 965301df55c249b4698e9baa47b54e24, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 342372343}
-    - targetCorrespondingSourceObject: {fileID: 2813977791710443920, guid: 965301df55c249b4698e9baa47b54e24, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1239416582}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4051897580745969110, guid: 965301df55c249b4698e9baa47b54e24, type: 3}
       insertIndex: -1
@@ -4999,57 +4937,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 552703238}
   m_SourcePrefab: {fileID: 100100000, guid: 965301df55c249b4698e9baa47b54e24, type: 3}
---- !u!1 &1239416581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1239416582}
-  - component: {fileID: 1239416583}
-  m_Layer: 8
-  m_Name: RaycasterBack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1239416582
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239416581}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -2.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 51452201}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1239416583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239416581}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c915dc626d0fc514eadb7ca56f6f2592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastDistance: 10
-  layerTocheck: Wall
-  isSecurityCamera: 0
-  cameraSeesPlayer: 0
-  isUnderCower: 0
-  isForWind: 1
-  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &1248111170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6025,57 +5912,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!1 &1436349065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1436349066}
-  - component: {fileID: 1436349067}
-  m_Layer: 8
-  m_Name: RaycasterRigth
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1436349066
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436349065}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.38, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 51452201}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1436349067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436349065}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c915dc626d0fc514eadb7ca56f6f2592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastDistance: 10
-  layerTocheck: Wall
-  isSecurityCamera: 0
-  cameraSeesPlayer: 0
-  isUnderCower: 0
-  isForWind: 1
-  dir: {x: 0, y: 0, z: 0}
 --- !u!4 &1455611946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8748298260881288629, guid: 6e4c7229053ef2b4b80087981cf9c4d3, type: 3}
@@ -7926,6 +7762,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1802303638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7242683673287806140, guid: ce9878f647c1601449010c733c5a7cb4, type: 3}
+  m_PrefabInstance: {fileID: 523563934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1822823762
 GameObject:
   m_ObjectHideFlags: 0
@@ -8013,7 +7854,7 @@ Transform:
   m_GameObject: {fileID: 1822823762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.034, y: 0.71000004, z: 0}
+  m_LocalPosition: {x: -0.034, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8032,8 +7873,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0, y: 0.4, z: 0}
-  VerticalArmLength: 0.31
+  ShoulderOffset: {x: 0, y: 0, z: 0}
+  VerticalArmLength: 0
   CameraSide: 1
   CameraDistance: 10
   AvoidObstacles:
@@ -8459,7 +8300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c915dc626d0fc514eadb7ca56f6f2592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 10
+  raycastDistance: 30
   layerTocheck: Wall
   isSecurityCamera: 0
   cameraSeesPlayer: 0
@@ -8755,6 +8596,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1980748118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4829245234982322414, guid: 47392de090253cb49bad81bd69d94f32, type: 3}
+  m_PrefabInstance: {fileID: 1958115670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2028105423
 GameObject:
   m_ObjectHideFlags: 0

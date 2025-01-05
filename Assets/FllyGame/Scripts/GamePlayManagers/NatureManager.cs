@@ -17,20 +17,15 @@ public class NatureManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-    
-            windDirectionImage.transform.localEulerAngles = new Vector3(0, 0, windZoneObject.transform.localEulerAngles.y);
-        
 
-        //if (windZonePrefab.activeInHierarchy)
-        //{
-        //    Debug.Log("is active");
-        //    //if (!windDirectionImage.activeInHierarchy) {/* windDirectionImage.gameObject.SetActive(true); */}
-        //    windDirectionImage.transform.localEulerAngles=new Vector3(0,0,windZonePrefab.transform.localEulerAngles.z);
-        //}
-        //else
-        //{
-        //    //windDirectionImage.gameObject.SetActive(false);
-        //}
+        changeWindImage();
+
+
+    }
+
+    void changeWindImage()
+    {
+        windDirectionImage.transform.localEulerAngles = new Vector3(0, 0, -windZoneObject.transform.localEulerAngles.y);
     }
 
 }
