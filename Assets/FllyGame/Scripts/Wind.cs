@@ -6,6 +6,7 @@ namespace RageRunGames.EasyFlyingSystem
     {
         public Rigidbody rb;
         public DroneController droneController;
+        
         public bool isOnWIndZone = false;
         public GameObject windArea = null;
         public Raycaster raycasterLeft=null;
@@ -28,20 +29,13 @@ namespace RageRunGames.EasyFlyingSystem
         
         public void Start()
         {
-            if(windDirection == WindDirection.none)
-                windDirection = WindDirection.none;
+            if (NatureManager.instance)
+            {
+                windArea = NatureManager.instance.windZoneObject;
+            }
+           
+            //Invoke(nameof(SetWindDirectionImage),1);
             
-            if(windDirection == WindDirection.left)
-                raycasterLeft.dir=Vector3.left;
-
-            if(windDirection == WindDirection.right)
-                raycasterRight.dir=Vector3.right;
-
-            if(windDirection == WindDirection.forward)
-                raycasterForward.dir=Vector3.forward;
-
-            if(windDirection == WindDirection.back)
-                raycasterBack.dir=Vector3.back;
         }
         private void FixedUpdate()
         {
@@ -50,7 +44,7 @@ namespace RageRunGames.EasyFlyingSystem
             {
                 droneController.windforce = windArea.transform.forward;
                 droneController.windSpeed = windArea.GetComponent<WindZone>().windMain;
-                //rb.AddForce(windArea.transform.forward*windArea.GetComponent<WindZone>().windMain, ForceMode.Force);
+                
             }
             else
             {
@@ -67,6 +61,45 @@ namespace RageRunGames.EasyFlyingSystem
                 return false;
             }
            
+        }
+
+        public void SetWindDirectionImage()
+        {
+           // StatsManager.instance.windDirectionUi.transform.eulerAngles = Vector3.zero;
+            if (windDirection == WindDirection.none)
+            {
+                windDirection = WindDirection.none;
+                //StatsManager.instance.windDirectionUi.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+
+
+            if (windDirection == WindDirection.left)
+            {
+                raycasterLeft.dir = Vector3.left;
+                //StatsManager.instance.windDirectionUi.transform.eulerAngles = new Vector3(0, 0, -90);
+            }
+
+
+            if (windDirection == WindDirection.right)
+            {
+                raycasterRight.dir = Vector3.right;
+               // StatsManager.instance.windDirectionUi.transform.eulerAngles = new Vector3(0, 0, 90);
+            }
+
+
+            if (windDirection == WindDirection.forward)
+            {
+                raycasterForward.dir = Vector3.forward;
+                //StatsManager.instance.windDirectionUi.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+
+
+            if (windDirection == WindDirection.back)
+            {
+                raycasterBack.dir = Vector3.back;
+               // StatsManager.instance.windDirectionUi.transform.eulerAngles = new Vector3(0, 0, 180);
+            }
+
         }
     }
 }

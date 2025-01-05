@@ -5,7 +5,11 @@ namespace RageRunGames.EasyFlyingSystem
     public class ScenesManager : MonoBehaviour
     {
         public static ScenesManager instance;
-
+        public enum _states
+        {
+            menu,
+            game,
+        }
         private void Awake()
         {
             if (instance)
@@ -22,6 +26,7 @@ namespace RageRunGames.EasyFlyingSystem
         {
             if (GameManager.instance)
             {
+                GameManager.instance.state= (GameManager.states)_states.game;
                 SceneManager.LoadScene(Stage);
                 SceneManager.LoadScene("DisplayScene", LoadSceneMode.Additive);
             }

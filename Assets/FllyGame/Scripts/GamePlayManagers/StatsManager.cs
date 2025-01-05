@@ -25,6 +25,8 @@ namespace RageRunGames.EasyFlyingSystem
         public float MaxCharge = 100;
         private float minCharge = 0;
 
+        public GameObject windDirectionUi=null;
+
         
 
         public enum GameMode

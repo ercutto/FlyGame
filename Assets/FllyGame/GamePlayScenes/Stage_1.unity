@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTesting: 1
-  stage: 2
+  wind: {fileID: 0}
 --- !u!1 &119779838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,12 +2119,12 @@ MonoBehaviour:
   rb: {fileID: 552703235}
   droneController: {fileID: 552703237}
   isOnWIndZone: 1
-  windArea: {fileID: 1169291496}
+  windArea: {fileID: 0}
   raycasterLeft: {fileID: 1939989510}
   raycasterRight: {fileID: 1436349067}
   raycasterForward: {fileID: 342372344}
   raycasterBack: {fileID: 1239416583}
-  windDirection: 1
+  windDirection: 2
 --- !u!1 &555966335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,52 +4159,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1975774384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1169291496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1169291498}
-  - component: {fileID: 1169291497}
-  m_Layer: 0
-  m_Name: WindZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!182 &1169291497
-WindZone:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169291496}
-  m_Enabled: 1
-  m_Mode: 0
-  m_Radius: 20
-  m_WindMain: 1
-  m_WindTurbulence: 0.12
-  m_WindPulseMagnitude: 0.5
-  m_WindPulseFrequency: 0.01
---- !u!4 &1169291498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169291496}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1187534842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5529993191073487876, guid: ce9878f647c1601449010c733c5a7cb4, type: 3}
@@ -9039,4 +8993,3 @@ SceneRoots:
   - {fileID: 1573931389}
   - {fileID: 1023390409251552019}
   - {fileID: 87803848}
-  - {fileID: 1169291498}
