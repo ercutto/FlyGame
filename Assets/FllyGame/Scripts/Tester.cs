@@ -9,8 +9,9 @@ public class Tester : MonoBehaviour
     
     public Wind wind=null;
 
-    public GameObject drone=null;
-    public GameObject drone2 = null;
+   
+    public GameObject[]drones=new GameObject[6];
+    int i = 0;
     void Awake()
     {
         if (isTesting)
@@ -28,8 +29,25 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            drone.SetActive(false);
-            drone2.SetActive(true);
+            SwicthDrone();
         }
+    }
+
+    void SwicthDrone()
+    {
+        drones[i].SetActive(false);
+        i++;
+        if(i > 5)
+        {
+            i = 0;
+            drones[i].SetActive(true);
+
+        }
+        else
+        {
+            drones[i].SetActive(true) ;
+        }
+
+       
     }
 }
