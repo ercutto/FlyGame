@@ -28,7 +28,7 @@ namespace RageRunGames.EasyFlyingSystem
         {
             raycasterLeft.dir=-windArea.transform.forward;
 
-            if (!DroneIsUnderCower())
+            if (!DroneIsUnderCower()&&!droneController.IsGrounded)
             {
                 
                 droneController.windforce = windArea.transform.forward;

@@ -4,6 +4,8 @@ namespace RageRunGames.EasyFlyingSystem
     public class TargetManager : MonoBehaviour
     {
         public static TargetManager instance;
+        public GameObject startPosition;
+        public GameObject endPosition;
         public Target[] Targets = new Target[10];
         public Camera cam;
         private GameObject player;
@@ -76,6 +78,7 @@ namespace RageRunGames.EasyFlyingSystem
 
                     if (i == Targets.Length - 1 && Targets[i].destinationReached)
                     {
+
                         WinStage("win!!");
 
                     }
@@ -103,6 +106,25 @@ namespace RageRunGames.EasyFlyingSystem
             }
         }
 
+        public void PlayerCouldLiftDrone()
+        {
+            StatsManager.instance.AddScore(100);
+            Debug.Log("Player could Lift!");
+
+        }
+
+        public void StageWin()
+        {
+            StatsManager.instance.AddScore(10000);
+            if (GameManager.instance)
+            { GameManager.instance.NextStage(); }
+            else
+            {
+                Debug.Log("StageWin!");
+                ScenesManager.instance.SelectLevel(3);
+            }
+        }
+
         void WinStage(string msg)
         {
             for (int i = 0; i < Targets.Length; i++)
@@ -117,7 +139,7 @@ namespace RageRunGames.EasyFlyingSystem
             { GameManager.instance.NextStage(); }
             else
             {
-                ScenesManager.instance.SelectLevel(3);
+               
             }
         }
     }
