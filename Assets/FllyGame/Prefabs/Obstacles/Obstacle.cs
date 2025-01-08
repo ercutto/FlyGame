@@ -12,12 +12,7 @@ public class Obstacle : MonoBehaviour
 
    
   
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+ 
     void FixedUpdate()
     {
         if (rotator != null) { Petroll(); }
@@ -28,6 +23,7 @@ public class Obstacle : MonoBehaviour
     {
         rotator.transform.localEulerAngles= new Vector3(Mathf.PingPong(Time.time*rotationX_Speed,rotationX_Length), Mathf.PingPong(Time.time*rotationY_Speed ,rotationY_Length),0);
     }
+    
 
   
 }

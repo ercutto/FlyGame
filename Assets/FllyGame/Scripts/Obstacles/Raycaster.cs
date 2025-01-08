@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 namespace RageRunGames.EasyFlyingSystem
 {
@@ -13,6 +14,8 @@ namespace RageRunGames.EasyFlyingSystem
         public bool cameraSeesPlayer = false;
         public bool isUnderCower = false;
         public bool isForWind = false;
+
+        public GameObject door=null;
        
         public Vector3 dir= Vector3.zero;   
 
@@ -81,7 +84,6 @@ namespace RageRunGames.EasyFlyingSystem
 
                 isUnderCower = true;
 
-                Debug.Log("Ruzgar Yok!!");
 
             }
 
@@ -89,7 +91,7 @@ namespace RageRunGames.EasyFlyingSystem
             if (hits == 0)
             {
                 isUnderCower = false;
-                Debug.Log("Ruzgar var!!");
+               
             }
 
 
@@ -100,6 +102,19 @@ namespace RageRunGames.EasyFlyingSystem
         void SecurityCameraCheck()
         {
             Debug.Log("camera  " + cameraSeesPlayer);
+
+            if (cameraSeesPlayer)
+            {
+                door.GetComponent<DoorController>().CloseDoor();
+            }
+            else
+            {
+                door.GetComponent<DoorController>().OpenDoor();
+            }
+            
+            
         }
+
+        
     }
 }
