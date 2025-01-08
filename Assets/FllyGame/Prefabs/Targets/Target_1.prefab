@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4985326736069656533}
   - component: {fileID: 6836193251509019518}
   - component: {fileID: 6489092008492691598}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Target_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,4 +308,6 @@ MonoBehaviour:
   index: 0
   destinationReached: 0
   scoreAmount: 100
+  isFinalLandingPosition: 0
+  isStartingPosition: 0
   canvas: {fileID: 3980540491101730870}

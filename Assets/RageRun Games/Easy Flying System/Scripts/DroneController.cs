@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace RageRunGames.EasyFlyingSystem
     [RequireComponent(typeof(BoxCollider))]
     public class DroneController : BaseFlyController
     {
+        public bool Pc = false;
         [Header("Input Settings")] [HideInInspector]
         public InputType inputType;
 
@@ -34,6 +36,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         public bool isUnderCower=false;
         public Vector3 windforce =Vector3.zero;
+        public LayerMask groundLayer;
         
         public float windSpeed = 0;
 
@@ -48,16 +51,24 @@ namespace RageRunGames.EasyFlyingSystem
         {
             base.Initialize();
 
-            if (InputHandler == null)
+            groundLayer = LayerMask.GetMask("Ground");
+            if (Pc)
             {
-                Debug.LogWarning(" No input is added or selected, adding keyboard input as default ");
-                InputHandler = gameObject.AddComponent<KeyboardInputHandler>();
+                if (InputHandler == null)
+                {
+                    Debug.LogWarning(" No input is added or selected, adding keyboard input as default ");
+                    InputHandler = gameObject.AddComponent<KeyboardInputHandler>();
+
+                }
             }
         }
 
         protected override void Update()
         {
-            IsGrounded = Physics.Raycast(transform.position, Vector3.down, groundCheckDistance);
+          
+
+            IsGrounded = Physics.Raycast(transform.position, Vector3.down, groundCheckDistance,groundLayer);
+            Debug.DrawRay(transform.position, Vector3.down * groundCheckDistance, Color.yellow);
 
             if (IsGrounded && rb.linearVelocity != Vector3.zero && decelerateOnGround)
             {
@@ -162,6 +173,7 @@ namespace RageRunGames.EasyFlyingSystem
                 if (mobileControls != null)
                 {
 #if UNITY_EDITOR
+                    if(Pc)
                     DestroyImmediate(mobileControls);
 #endif
 
@@ -171,6 +183,7 @@ namespace RageRunGames.EasyFlyingSystem
                     }
                 }
 
+                if(Pc)
                 DestroyImmediate(currentInputHandler);
             }
 
@@ -234,5 +247,7 @@ namespace RageRunGames.EasyFlyingSystem
         }
 
         #endregion
+        
+
     }
 }
