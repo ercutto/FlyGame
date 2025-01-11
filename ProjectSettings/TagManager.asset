@@ -18,9 +18,9 @@ TagManager:
   - DisplayRenderer
   - LandingArea
   - Targets
-  - 
-  - 
-  - 
+  - miniMapTile
+  - Ligths
+  - Roof
   - 
   - 
   - 

@@ -9,6 +9,7 @@ namespace RageRunGames.EasyFlyingSystem
         public GameObject endPosition;
         public Target[] Targets = new Target[10];
         public Camera cam;
+
         private GameObject player;
         public GameObject packed=null;
         [SerializeField]

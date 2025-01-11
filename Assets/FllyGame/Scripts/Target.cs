@@ -52,7 +52,6 @@ namespace RageRunGames.EasyFlyingSystem
                     TargetManager.instance.CheckDestination(index, scoreAmount);
                     break;
                 case 1:
-                    GetComponent<BoxCollider>().enabled = false;
                     PackedLifted(playerObject);
                     break;
                 case 2:
@@ -60,7 +59,6 @@ namespace RageRunGames.EasyFlyingSystem
                     Invoke(nameof(CallLiftingStage), 2);
                     break;
                 case 3:
-                    GetComponent<BoxCollider>().enabled = false;
                     PackedDelivered();
                     break;
                 case 4:
@@ -91,16 +89,21 @@ namespace RageRunGames.EasyFlyingSystem
 
         void PackedLifted(GameObject player)
         {
-            TargetManager.instance.packed = this.gameObject;
-            transform.position = player.GetComponent<DroneController>().packedHolder.transform.position;
-            transform.SetParent(player.transform.GetComponent<DroneController>().packedHolder.transform);
+            if (TargetManager.instance.packed == null)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+                TargetManager.instance.packed = this.gameObject;
+                transform.position = player.GetComponent<DroneController>().packedHolder.transform.position;
+                transform.SetParent(player.transform.GetComponent<DroneController>().packedHolder.transform);
+            }
 
         }
 
         public void PackedDelivered()
         {
-            if (TargetManager.instance.packed != null)
+            if (TargetManager.instance.packed != null&& TargetManager.instance.packed.GetComponent<Target>().index==index)
             {
+                GetComponent<BoxCollider>().enabled = false;
                 Debug.Log("packed Delivered");
                 GameObject packed = TargetManager.instance.packed;
                 packed.transform.SetParent(null);
