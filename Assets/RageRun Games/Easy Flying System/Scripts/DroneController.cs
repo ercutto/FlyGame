@@ -37,7 +37,7 @@ namespace RageRunGames.EasyFlyingSystem
         public bool isUnderCower=false;
         public Vector3 windforce =Vector3.zero;
         public LayerMask groundLayer;
-        
+        public GameObject packedHolder=null;
         public float windSpeed = 0;
 
         

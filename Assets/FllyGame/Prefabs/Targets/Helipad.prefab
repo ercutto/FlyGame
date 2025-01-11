@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1343517305637213449}
   - component: {fileID: 297390145216895322}
+  - component: {fileID: 1223291191129489652}
   m_Layer: 10
   m_Name: Helipad
   m_TagString: Untagged
@@ -229,6 +230,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.898319, y: 0.44256526, z: 1.9591894}
   m_Center: {x: 0.023190498, y: -0.08688709, z: -0.05512762}
+--- !u!114 &1223291191129489652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137654713283591276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bb583bbd19264fa27bee5ed4435a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: Player
+  IndexText: {fileID: 0}
+  index: 0
+  destinationReached: 0
+  scoreAmount: 100
+  isFinalLandingPosition: 0
+  isStartingPosition: 1
+  canvas: {fileID: 0}
+  isPacket: 0
+  playerObject: {fileID: 0}
+  isDeliveryDestianation: 0
+  targetType: 5
 --- !u!1 &8294320208686341035
 GameObject:
   m_ObjectHideFlags: 0

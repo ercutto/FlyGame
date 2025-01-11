@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 namespace RageRunGames.EasyFlyingSystem
 {
@@ -9,7 +10,18 @@ namespace RageRunGames.EasyFlyingSystem
         public Target[] Targets = new Target[10];
         public Camera cam;
         private GameObject player;
-
+        public GameObject packed=null;
+        [SerializeField]
+        public enum TargetType
+        {   none,
+            package,
+            packetPikupPosition,
+            packetDeliveryPosition,
+            destinations,
+            startPosition,
+            endPosition,
+        }
+        public TargetType targetType;
         void Start()
         {
             if (instance)
@@ -142,5 +154,7 @@ namespace RageRunGames.EasyFlyingSystem
                
             }
         }
+
+      
     }
 }
