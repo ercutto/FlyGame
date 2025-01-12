@@ -1232,7 +1232,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 500
-  field of view: 13.346533
+  field of view: 13.334884
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1259,7 +1259,7 @@ Transform:
   m_GameObject: {fileID: 342553554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.034, y: -0.206, z: -13.75}
+  m_LocalPosition: {x: -0.034, y: 0.214, z: -13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2529,13 +2529,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555966335}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.82035637, y: 0.28531292, z: 0.23332117, w: 0.43723357}
+  m_LocalRotation: {x: 0.7835496, y: -0.031850982, z: 0.05934778, w: 0.6176678}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1878003095}
-  m_LocalEulerAnglesHint: {x: 35.749, y: 128.821, z: 124.086}
+  m_LocalEulerAnglesHint: {x: 76.343, y: 166.864, z: 174.312}
 --- !u!114 &555966338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9015,7 +9015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1374161235, guid: 6c1e5f6a6ff2ec44499d79df25ef4807, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fba24d15defa811489f02fc77a12baa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9246,7 +9246,7 @@ Transform:
   m_GameObject: {fileID: 1822823762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.034, y: -0.206, z: -13.75}
+  m_LocalPosition: {x: -0.034, y: 0.214, z: -13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9265,8 +9265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0, y: 0, z: 0}
-  VerticalArmLength: 0
+  ShoulderOffset: {x: 0, y: 0.25, z: 0}
+  VerticalArmLength: 0.17
   CameraSide: 1
   CameraDistance: 10
   AvoidObstacles:
@@ -9298,7 +9298,7 @@ MonoBehaviour:
       m_Bits: 128
     UseFollowTarget:
       Enabled: 1
-      YOffset: 0.03
+      YOffset: 0.3
     Damping: 0.5
     SmoothingTime: 0.767
   TerrainResolution:

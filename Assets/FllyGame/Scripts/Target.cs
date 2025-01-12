@@ -18,7 +18,7 @@ namespace RageRunGames.EasyFlyingSystem
         public GameObject playerObject;
         public bool isDeliveryDestianation = false;
         [SerializeField]
-        public enum TargetType
+        public enum TargetType//görev tipi
         {
             none,
             package,
@@ -41,7 +41,6 @@ namespace RageRunGames.EasyFlyingSystem
 
 
         }
-
 
 
         public void ObjectType(int type,GameObject player)
@@ -76,18 +75,18 @@ namespace RageRunGames.EasyFlyingSystem
         }
 
 
-        void CallLiftingStage()
+        void CallLiftingStage()//drone kalkis
         {
-            //Buraya pervanelerin durmasini beklemeyi eklemek gerekiyor
+            
             TargetManager.instance.PlayerCouldLiftDrone();
 
         }
-        void CallStageWin()
+        void CallStageWin()//bölum gecme
         {
             TargetManager.instance.StageWin();
         }
 
-        void PackedLifted(GameObject player)
+        void PackedLifted(GameObject player)//paket alma
         {
             if (TargetManager.instance.packed == null)
             {
@@ -99,7 +98,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         }
 
-        public void PackedDelivered()
+        public void PackedDelivered()//paket teslim
         {
             if (TargetManager.instance.packed != null&& TargetManager.instance.packed.GetComponent<Target>().index==index)
             {
