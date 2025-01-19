@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2bcfa638b56f24c4b8aaf5a86ec7fafb
+timeCreated: 1510519753
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/signs/materials/exitBox_line.mat
+  uploadId: 371417

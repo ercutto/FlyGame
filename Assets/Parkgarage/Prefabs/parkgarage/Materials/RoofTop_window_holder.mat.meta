@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1c75e93ba7dc0d9438242c4e3148715d
+timeCreated: 1510165044
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/parkgarage/Materials/RoofTop_window_holder.mat
+  uploadId: 371417

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dd95d210e7b94c64189c87de17dd4ee4
+timeCreated: 1510165043
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/parkgarage/Materials/sidewalk_A.mat
+  uploadId: 371417

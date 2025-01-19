@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5b8000be35200c7478626263288300d1
+timeCreated: 1510507928
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/machines/Materials/Barrier gate.mat
+  uploadId: 371417

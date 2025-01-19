@@ -11,6 +11,8 @@ namespace RageRunGames.EasyFlyingSystem
         public Camera cam;
 
         private GameObject player;
+        [Header("Package Delivery")]
+        public Target[] packegeDeliveryPosition=new Target[2];
         public GameObject packed=null;
         [SerializeField]
         public enum TargetType
@@ -157,5 +159,18 @@ namespace RageRunGames.EasyFlyingSystem
         }
 
       
+        public void PackageDeliveryAddress(int packageindex,string msg)
+        {
+            string _message;
+           _message = packegeDeliveryPosition[packageindex].GetComponent<Target>().Adress;
+            //StatsManager.instance.MesageText.text=_message;
+            StatsManager.instance.WriteMessage(_message+msg);
+        }
+        public void PackageDeliveredMessage(string msg)
+        {
+            StatsManager.instance.WriteMessage(msg);
+        }
+
+
     }
 }

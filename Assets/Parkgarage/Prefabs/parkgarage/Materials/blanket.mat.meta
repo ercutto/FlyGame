@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2afadaf731e32774db3913557604e79a
+timeCreated: 1510165043
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/parkgarage/Materials/blanket.mat
+  uploadId: 371417

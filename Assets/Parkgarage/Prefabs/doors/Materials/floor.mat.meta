@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 520ca06875bca694d8a5d3e41ec508ea
+timeCreated: 1510445649
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/doors/Materials/floor.mat
+  uploadId: 371417

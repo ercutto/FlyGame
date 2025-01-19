@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e1ce15ff081e59f45882cb191931be06
+timeCreated: 1510450521
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/lamps/streetLight_prefab.prefab
+  uploadId: 371417

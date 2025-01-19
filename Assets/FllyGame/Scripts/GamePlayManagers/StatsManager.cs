@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 namespace RageRunGames.EasyFlyingSystem
@@ -27,7 +28,10 @@ namespace RageRunGames.EasyFlyingSystem
         [Space]
         [Header("Wind")]
         public GameObject windDirectionUi=null;
-       
+
+        [Header("Mesages")]
+        public Text MesageText= null;
+        public string mesage=null;
 
         public enum GameMode
         {
@@ -125,6 +129,22 @@ namespace RageRunGames.EasyFlyingSystem
             TypeTexts(scoreText, score);
             TypeTexts(HealthText, currentHealth);
             TypeTexts(BatteryText, currentCharge);
+        }
+
+        public void WriteMessage(string message)
+        {
+            StartCoroutine(TypingToUI(message));
+        }
+        IEnumerator TypingToUI(string _message)
+        {
+            
+            for (int i = 0; i < _message.Length; i++)
+            {
+                yield return new WaitForSeconds(0.5f);
+                string delayedText = _message.Substring(0, i + 1);
+                MesageText.text = delayedText;
+               
+            }
         }
     }
 }

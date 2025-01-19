@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b5cb9b06e19aff43a93ebce7af59e7c
+timeCreated: 1510520283
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/signs/HighLimit_sign_prefab.prefab
+  uploadId: 371417

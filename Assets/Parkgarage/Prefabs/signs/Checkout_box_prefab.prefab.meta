@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0c197f5f8d89fa44cb6f344ad2a297ee
+timeCreated: 1510520253
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/signs/Checkout_box_prefab.prefab
+  uploadId: 371417

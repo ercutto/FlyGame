@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.MaterialProperty;
 namespace RageRunGames.EasyFlyingSystem
 {
     public class Target : MonoBehaviour
@@ -16,7 +17,11 @@ namespace RageRunGames.EasyFlyingSystem
         [Header("PACKET DELIVERY")]
         public bool isPacket = false;
         public GameObject playerObject;
+        public GameObject mapIndicator = null;
+        
         public bool isDeliveryDestianation = false;
+        [TextArea(5,10)]
+        public string Adress = "";
         [SerializeField]
         public enum TargetType//görev tipi
         {
@@ -91,9 +96,13 @@ namespace RageRunGames.EasyFlyingSystem
             if (TargetManager.instance.packed == null)
             {
                 GetComponent<BoxCollider>().enabled = false;
+                mapIndicator.SetActive(false);
                 TargetManager.instance.packed = this.gameObject;
                 transform.position = player.GetComponent<DroneController>().packedHolder.transform.position;
                 transform.SetParent(player.transform.GetComponent<DroneController>().packedHolder.transform);
+                //Adress icin gönderilen Mesaj
+                TargetManager.instance.PackageDeliveryAddress(index, "");
+               
             }
 
         }
@@ -103,12 +112,17 @@ namespace RageRunGames.EasyFlyingSystem
             if (TargetManager.instance.packed != null&& TargetManager.instance.packed.GetComponent<Target>().index==index)
             {
                 GetComponent<BoxCollider>().enabled = false;
+                mapIndicator.SetActive(false);
                 Debug.Log("packed Delivered");
                 GameObject packed = TargetManager.instance.packed;
                 packed.transform.SetParent(null);
                 packed.transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
                 packed.transform.SetParent(this.transform);
                 TargetManager.instance.packed = null;
+                //StatsManager.instance.MesageText.text = "Message:" + Adress;
+                //Adress icin gönderilen Mesaj
+                string msg = "paket teslim edilmistir!";
+                TargetManager.instance.PackageDeliveredMessage(msg);
             }
         }
 

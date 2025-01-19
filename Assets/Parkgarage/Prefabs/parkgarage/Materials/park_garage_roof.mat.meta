@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 78c753ca228b34f45b2594ba6251ad0e
+timeCreated: 1510250345
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/parkgarage/Materials/park_garage_roof.mat
+  uploadId: 371417

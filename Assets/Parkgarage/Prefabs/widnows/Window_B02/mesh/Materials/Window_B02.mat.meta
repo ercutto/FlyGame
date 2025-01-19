@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 47b4cf004c7b8fd4088969b59dfbaccf
+timeCreated: 1510263672
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/widnows/Window_B02/mesh/Materials/Window_B02.mat
+  uploadId: 371417

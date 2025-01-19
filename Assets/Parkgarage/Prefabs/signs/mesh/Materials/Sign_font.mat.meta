@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 1e24253e891b7aa44b500a70f9c3141d
+timeCreated: 1510578836
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/signs/mesh/Materials/Sign_font.mat
+  uploadId: 371417

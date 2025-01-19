@@ -9,6 +9,7 @@ namespace RageRunGames.EasyFlyingSystem
         [Range(0,20f)]public float miniMapCameraDistance;
         float droneX = 0;
         float droneY = 0;
+        float droneheigth;
         float droneRotation = 0;
     
         void Start()
@@ -27,8 +28,9 @@ namespace RageRunGames.EasyFlyingSystem
 
             droneX = drone.position.x;
             droneY = drone.position.z;
+            droneheigth = drone.position.y;
             droneRotation = drone.eulerAngles.y;
-            transform.position = new Vector3(droneX, miniMapCameraDistance, droneY);
+            transform.position = new Vector3(droneX,droneheigth+ miniMapCameraDistance, droneY);
             transform.rotation = Quaternion.Euler(90, droneRotation, 0f);
            
         }

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1980c0f79edfbe4468f78b1c38395ba3
+timeCreated: 1510257940
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/parkgarage/Materials/Stone_treeHolder.mat
+  uploadId: 371417

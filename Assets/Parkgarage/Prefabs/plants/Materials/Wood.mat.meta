@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c4ca8abeb4d3fdf47987209ae59ea105
+timeCreated: 1510511103
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/plants/Materials/Wood.mat
+  uploadId: 371417

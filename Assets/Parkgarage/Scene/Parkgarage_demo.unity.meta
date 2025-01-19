@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 815b67f4a486d044db020e67e06ab4aa
+timeCreated: 1510093863
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Scene/Parkgarage_demo.unity
+  uploadId: 371417

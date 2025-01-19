@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 80
+  maxLiftSpeed: 30
   autoForwardMovement: 0
   pitchAmount: 30
   rollAmount: 30
@@ -326,6 +327,8 @@ MonoBehaviour:
   ignoreRotationLimits: 0
   pitchRotationLimit: {x: -30, y: 30}
   rollRotationLimit: {x: -30, y: 30}
+  graphicPitchLimit: {x: -30, y: 30}
+  Pc: 0
   inputType: 1
   maintainAltitude: 1
   useGravityOnNoInput: 0
@@ -335,6 +338,15 @@ MonoBehaviour:
   groundCheckDistance: 1
   decelerateOnGround: 0
   decelSpeedOnGround: 5
+  onlyGraphichPitch: 0
+  graphics: {fileID: 0}
+  isUnderCower: 0
+  windforce: {x: 0, y: 0, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  packedHolder: {fileID: 0}
+  windSpeed: 0
 --- !u!114 &3840968643005387459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,15 +531,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1093,15 +1107,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1180,11 +1196,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f1ca694590eaaac45bf7710597b589f1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2c3b08a6730b04e42bd626a623aeb581, type: 2}
     - target: {fileID: -7511558181221131132, guid: f1ca694590eaaac45bf7710597b589f1, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 2c3b08a6730b04e42bd626a623aeb581, type: 2}
     - target: {fileID: 919132149155446097, guid: f1ca694590eaaac45bf7710597b589f1, type: 3}

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a4be31a8cc27c784692565c51f048a23
+timeCreated: 1510447999
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/lamps/Materials/In.mat
+  uploadId: 371417

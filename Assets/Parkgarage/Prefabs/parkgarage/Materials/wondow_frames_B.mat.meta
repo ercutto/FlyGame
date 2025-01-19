@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f970226c9b52fda4abaa2922a67f3691
+timeCreated: 1510165043
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/parkgarage/Materials/wondow_frames_B.mat
+  uploadId: 371417

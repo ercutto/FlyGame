@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: baa76a2e268a14b4287c74d4bf99b447
+timeCreated: 1510520277
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 104909
+  packageName: Parking Garage - Complete
+  packageVersion: 1.0
+  assetPath: Assets/Parkgarage/Prefabs/signs/Direction_right_sign_prefab.prefab
+  uploadId: 371417
