@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 namespace RageRunGames.EasyFlyingSystem
@@ -32,6 +33,15 @@ namespace RageRunGames.EasyFlyingSystem
         [Header("Mesages")]
         public Text MesageText= null;
         public string mesage=null;
+        [Range(0f, 1f)] public float textingSpeed=0.5f;
+
+        [Header("TimeCount")]
+        public Text TimeText = null;
+        public string timeMessage = null;
+        public float currentTime = 100f;
+        public float maxTime = 100f;
+        public float minTime = 0f;
+        public bool isPackageDelivered=false;
 
         public enum GameMode
         {
@@ -135,16 +145,50 @@ namespace RageRunGames.EasyFlyingSystem
         {
             StartCoroutine(TypingToUI(message));
         }
+
         IEnumerator TypingToUI(string _message)
         {
             
             for (int i = 0; i < _message.Length; i++)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(textingSpeed);
                 string delayedText = _message.Substring(0, i + 1);
                 MesageText.text = delayedText;
                
             }
+        }
+
+        public void TimeCount(float _time )
+        {
+            maxTime=_time;
+            currentTime=maxTime;
+            StartCoroutine(TimeCounting(currentTime));
+        }
+
+        IEnumerator TimeCounting(float time)
+        {
+            
+
+            currentTime=time;
+            while(!isPackageDelivered && currentTime > minTime) {
+
+                yield return new WaitForSeconds(1);
+                currentTime--;
+                TimeText.text = currentTime.ToString();
+
+            }
+            yield return null;
+            StartCoroutine(AddScoreCount());
+        }
+        IEnumerator AddScoreCount()
+        {   while (currentTime > minTime)
+            {
+                yield return new WaitForSeconds(0.01f);
+                currentTime--;
+                TimeText.text = currentTime.ToString();
+                AddScore(100);
+            }
+            yield return null ;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace RageRunGames.EasyFlyingSystem
         public Target[] Targets = new Target[10];
         public Camera cam;
 
+        
         private GameObject player;
         [Header("Package Delivery")]
         public Target[] packegeDeliveryPosition=new Target[2];
@@ -65,6 +66,7 @@ namespace RageRunGames.EasyFlyingSystem
 
             }
 
+            Targets[0].mapIndicator.SetActive(true);
             return;
 
         }
@@ -72,6 +74,8 @@ namespace RageRunGames.EasyFlyingSystem
         {
             if (currentDestination == 0)
             {
+                Targets[1].mapIndicator.SetActive(true);
+
                 DestinationAction(Targets[currentDestination], score);
 
             }
@@ -87,8 +91,13 @@ namespace RageRunGames.EasyFlyingSystem
                     }
                     else if (Targets[i].index == currentDestination)
                     {
+                        
                         DestinationAction(Targets[i], score);
 
+                        if(i < Targets.Length-1)
+                        {
+                            Targets[i+1].mapIndicator.SetActive(true);
+                        }
                     }
 
                     if (i == Targets.Length - 1 && Targets[i].destinationReached)
@@ -104,9 +113,12 @@ namespace RageRunGames.EasyFlyingSystem
         void DestinationAction(Target currentTarget, float score)
         {
             currentTarget.GetComponent<Collider>().enabled = false;
+            currentTarget.mapIndicator.SetActive(false);
             StatsManager.instance.AddScore(score);
             currentTarget.destinationReached = true;
             currentTarget.IndexText.text = "Pass";
+           
+            
         }
         void RotateTergetsUIToCamera()
         {
@@ -162,12 +174,24 @@ namespace RageRunGames.EasyFlyingSystem
         public void PackageDeliveryAddress(int packageindex,string msg)
         {
             string _message;
-           _message = packegeDeliveryPosition[packageindex].GetComponent<Target>().Adress;
+            float deliveryTime;
+            Target _target = packegeDeliveryPosition[packageindex].GetComponent<Target>();
+            _message = _target.Adress;
+            deliveryTime = _target.deliveryTime;
+            _target.mapIndicator.SetActive(true);
+           //_message = packegeDeliveryPosition[packageindex].GetComponent<Target>().Adress;
+           // StatsManager.instance.isPackageDelivered = false;
+           // deliveryTime = packegeDeliveryPosition[packageindex].GetComponent<Target>().deliveryTime;
+            
+            
+
             //StatsManager.instance.MesageText.text=_message;
             StatsManager.instance.WriteMessage(_message+msg);
+            StatsManager.instance.TimeCount(deliveryTime);
         }
         public void PackageDeliveredMessage(string msg)
         {
+            StatsManager.instance.isPackageDelivered = true;
             StatsManager.instance.WriteMessage(msg);
         }
 

@@ -18,6 +18,7 @@ namespace RageRunGames.EasyFlyingSystem
         public bool isPacket = false;
         public GameObject playerObject;
         public GameObject mapIndicator = null;
+        public float deliveryTime = 60f;
         
         public bool isDeliveryDestianation = false;
         [TextArea(5,10)]

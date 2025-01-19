@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &269656728737168635
 Transform:
   m_ObjectHideFlags: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   isPacket: 0
   playerObject: {fileID: 0}
   mapIndicator: {fileID: 1103650799514633497}
+  deliveryTime: 60
   isDeliveryDestianation: 1
   Adress: 
   targetType: 3

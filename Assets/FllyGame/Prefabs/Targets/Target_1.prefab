@@ -197,7 +197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7505366169032368868
 Transform:
   m_ObjectHideFlags: 0
@@ -401,7 +401,8 @@ MonoBehaviour:
   canvas: {fileID: 3980540491101730870}
   isPacket: 0
   playerObject: {fileID: 0}
-  mapIndicator: {fileID: 0}
+  mapIndicator: {fileID: 6065401690734931737}
+  deliveryTime: 60
   isDeliveryDestianation: 0
   Adress: 
   targetType: 0

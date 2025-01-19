@@ -4299,6 +4299,9 @@ MonoBehaviour:
   - {fileID: 1479488083}
   - {fileID: 1161872097}
   cam: {fileID: 0}
+  packegeDeliveryPosition:
+  - {fileID: 0}
+  - {fileID: 0}
   packed: {fileID: 0}
   targetType: 0
 --- !u!4 &1052982594 stripped
