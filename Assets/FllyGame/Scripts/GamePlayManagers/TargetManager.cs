@@ -14,7 +14,14 @@ namespace RageRunGames.EasyFlyingSystem
         private GameObject player;
         [Header("Package Delivery")]
         public Target[] packegeDeliveryPosition=new Target[2];
+        [Header("Packages")]
+        public Target[] packages=new Target[2];
         public GameObject packed=null;
+        public int packageIndex = 0;
+
+        //sonra sill
+        public PlayerNavigation playerNavigation;
+
         [SerializeField]
         public enum TargetType
         {   none,
@@ -39,6 +46,7 @@ namespace RageRunGames.EasyFlyingSystem
             Invoke(nameof(WriteToTargetsUI), 2);
 
             player = GameObject.FindWithTag("Player");
+            StartGamTargetMode(1);
         }
 
         void LateUpdate()
@@ -67,6 +75,7 @@ namespace RageRunGames.EasyFlyingSystem
             }
 
             Targets[0].mapIndicator.SetActive(true);
+            
             return;
 
         }
@@ -75,7 +84,7 @@ namespace RageRunGames.EasyFlyingSystem
             if (currentDestination == 0)
             {
                 Targets[1].mapIndicator.SetActive(true);
-
+                
                 DestinationAction(Targets[currentDestination], score);
 
             }
@@ -97,6 +106,7 @@ namespace RageRunGames.EasyFlyingSystem
                         if(i < Targets.Length-1)
                         {
                             Targets[i+1].mapIndicator.SetActive(true);
+                            
                         }
                     }
 
@@ -179,13 +189,6 @@ namespace RageRunGames.EasyFlyingSystem
             _message = _target.Adress;
             deliveryTime = _target.deliveryTime;
             _target.mapIndicator.SetActive(true);
-           //_message = packegeDeliveryPosition[packageindex].GetComponent<Target>().Adress;
-           // StatsManager.instance.isPackageDelivered = false;
-           // deliveryTime = packegeDeliveryPosition[packageindex].GetComponent<Target>().deliveryTime;
-            
-            
-
-            //StatsManager.instance.MesageText.text=_message;
             StatsManager.instance.WriteMessage(_message+msg);
             StatsManager.instance.TimeCount(deliveryTime);
         }
@@ -196,5 +199,31 @@ namespace RageRunGames.EasyFlyingSystem
         }
 
 
+        void StartGamTargetMode(int gamemode)
+        {
+            switch (gamemode)
+            {
+                case 0:
+                    CheckPointGameStart();
+                    break;
+                case 1:
+                    Invoke(nameof(PackageDeliveryGameStart),2);
+                    break;
+
+
+                default:
+                    break;
+            }
+        }
+
+        void CheckPointGameStart()
+        {
+
+        }
+        public void PackageDeliveryGameStart()
+        {   
+            packages[packageIndex].gameObject.SetActive(true);
+            StatsManager.instance.WriteMessage("yeni siparis geldi!...");
+        }
     }
 }

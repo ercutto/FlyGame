@@ -43,6 +43,8 @@ namespace RageRunGames.EasyFlyingSystem
         public float minTime = 0f;
         public bool isPackageDelivered=false;
 
+       // bool wait=false;    
+
         public enum GameMode
         {
             None,
@@ -143,12 +145,13 @@ namespace RageRunGames.EasyFlyingSystem
 
         public void WriteMessage(string message)
         {
-            StartCoroutine(TypingToUI(message));
+           
+                StartCoroutine(TypingToUI(message));
         }
 
         IEnumerator TypingToUI(string _message)
         {
-            
+            //yield return new WaitUntil(()=>wait);
             for (int i = 0; i < _message.Length; i++)
             {
                 yield return new WaitForSeconds(textingSpeed);
@@ -156,6 +159,9 @@ namespace RageRunGames.EasyFlyingSystem
                 MesageText.text = delayedText;
                
             }
+            //yield return  new WaitForSeconds(5);
+            //wait=true;
+            
         }
 
         public void TimeCount(float _time )
@@ -190,5 +196,7 @@ namespace RageRunGames.EasyFlyingSystem
             }
             yield return null ;
         }
+
+     
     }
 }

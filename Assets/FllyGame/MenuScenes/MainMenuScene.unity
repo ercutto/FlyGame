@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 2076652800}
   - component: {fileID: 2076652799}
   m_Layer: 5
-  m_Name: Play (1)
+  m_Name: PackageDelivery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

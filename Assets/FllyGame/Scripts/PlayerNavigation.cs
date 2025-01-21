@@ -5,13 +5,13 @@ namespace RageRunGames.EasyFlyingSystem
     public class PlayerNavigation : MonoBehaviour
     {
         public Transform drone=null;
-        private Vector3 dronePosition=Vector3.zero  ;
+    
         [Range(0,20f)]public float miniMapCameraDistance;
         float droneX = 0;
         float droneY = 0;
         float droneheigth;
         float droneRotation = 0;
-    
+
         void Start()
         {
             
@@ -32,6 +32,9 @@ namespace RageRunGames.EasyFlyingSystem
             droneRotation = drone.eulerAngles.y;
             transform.position = new Vector3(droneX,droneheigth+ miniMapCameraDistance, droneY);
             transform.rotation = Quaternion.Euler(90, droneRotation, 0f);
+
+         
+            
            
         }
     }

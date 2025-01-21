@@ -19,7 +19,8 @@ namespace RageRunGames.EasyFlyingSystem
         public GameObject playerObject;
         public GameObject mapIndicator = null;
         public float deliveryTime = 60f;
-        
+
+
         public bool isDeliveryDestianation = false;
         [TextArea(5,10)]
         public string Adress = "";
@@ -124,6 +125,8 @@ namespace RageRunGames.EasyFlyingSystem
                 //Adress icin gönderilen Mesaj
                 string msg = "paket teslim edilmistir!";
                 TargetManager.instance.PackageDeliveredMessage(msg);
+                TargetManager.instance.packageIndex++;
+                TargetManager.instance.PackageDeliveryGameStart();
             }
         }
 
