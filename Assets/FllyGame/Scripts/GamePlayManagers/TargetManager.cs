@@ -4,23 +4,41 @@ namespace RageRunGames.EasyFlyingSystem
 {
     public class TargetManager : MonoBehaviour
     {
+
         public static TargetManager instance;
+        [Header("Flying And Landing positions")]
         public GameObject startPosition;
         public GameObject endPosition;
+        [Header("__________________________________________")]
+
+        [Space(4)]
+        [Header("CheckPoint Game")]
         public Target[] Targets = new Target[10];
+        [Header("__________________________________________")]
+
+        [HideInInspector]
         public Camera cam;
 
         
+
         private GameObject player;
         [Header("Package Delivery")]
         public Target[] packegeDeliveryPosition=new Target[2];
+        [Header("__________________________________________")]
+
         [Header("Packages")]
         public Target[] packages=new Target[2];
+        [HideInInspector]
         public GameObject packed=null;
+        [HideInInspector]
         public int packageIndex = 0;
+
+        [Header("__________________________________________")]
 
         //sonra sill
         public PlayerNavigation playerNavigation;
+
+       
 
         [SerializeField]
         public enum TargetType
@@ -32,6 +50,9 @@ namespace RageRunGames.EasyFlyingSystem
             startPosition,
             endPosition,
         }
+        
+        [Header("__________________________________________")]
+        [Header("Select target mode")]
         public TargetType targetType;
         void Start()
         {
@@ -189,13 +210,19 @@ namespace RageRunGames.EasyFlyingSystem
             _message = _target.Adress;
             deliveryTime = _target.deliveryTime;
             _target.mapIndicator.SetActive(true);
-            StatsManager.instance.WriteMessage(_message+msg);
-            StatsManager.instance.TimeCount(deliveryTime);
+            StatsManager statManager= StatsManager.instance;
+            statManager.isPackageDelivered = false;
+            statManager.WriteMessage("paket kaldirildi!", 0);
+            statManager.WriteMessage(_message + msg, 1);
+            statManager.TimeCount(deliveryTime);
+            //StatsManager.instance.isPackageDelivered = false;
+            //StatsManager.instance.WriteMessage(_message+msg,1);
+            //StatsManager.instance.TimeCount(deliveryTime);
         }
         public void PackageDeliveredMessage(string msg)
         {
             StatsManager.instance.isPackageDelivered = true;
-            StatsManager.instance.WriteMessage(msg);
+            StatsManager.instance.WriteMessage(msg,1);
         }
 
 
@@ -221,9 +248,19 @@ namespace RageRunGames.EasyFlyingSystem
 
         }
         public void PackageDeliveryGameStart()
-        {   
-            packages[packageIndex].gameObject.SetActive(true);
-            StatsManager.instance.WriteMessage("yeni siparis geldi!...");
+        {
+            if (packageIndex==packages.Length)
+            {
+                StatsManager.instance.WriteMessage("Tebrikler bugunku siparisler bitti!...", 0);
+                return;
+            }
+            else
+            {
+                packages[packageIndex].gameObject.SetActive(true);
+                StatsManager.instance.WriteMessage("yeni siparis geldi!...", 0);
+
+            }
+           
         }
     }
 }

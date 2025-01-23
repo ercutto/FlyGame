@@ -1,6 +1,4 @@
-using JetBrains.Annotations;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 namespace RageRunGames.EasyFlyingSystem
@@ -32,6 +30,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         [Header("Mesages")]
         public Text MesageText= null;
+        public Text messageText2= null;
         public string mesage=null;
         [Range(0f, 1f)] public float textingSpeed=0.5f;
 
@@ -43,7 +42,6 @@ namespace RageRunGames.EasyFlyingSystem
         public float minTime = 0f;
         public bool isPackageDelivered=false;
 
-       // bool wait=false;    
 
         public enum GameMode
         {
@@ -53,8 +51,6 @@ namespace RageRunGames.EasyFlyingSystem
         }
         public bool player;
         [Header("Select Game mode")]
-
-        
         [SerializeField]
         public GameMode gameMode;
         private byte mode = 1;
@@ -143,25 +139,37 @@ namespace RageRunGames.EasyFlyingSystem
             TypeTexts(BatteryText, currentCharge);
         }
 
-        public void WriteMessage(string message)
+        public void WriteMessage(string message,int type)
         {
+            Text _type;
+            if (type == 0)//address
+            {
+                _type = MesageText;
+                Invoke(nameof(ClearText), 10f);
+            }
+            else
+                _type = messageText2;
+
+                StartCoroutine(TypingToUI(message,_type));
            
-                StartCoroutine(TypingToUI(message));
         }
 
-        IEnumerator TypingToUI(string _message)
+        IEnumerator TypingToUI(string _message, Text type)
         {
-            //yield return new WaitUntil(()=>wait);
+
             for (int i = 0; i < _message.Length; i++)
             {
                 yield return new WaitForSeconds(textingSpeed);
                 string delayedText = _message.Substring(0, i + 1);
-                MesageText.text = delayedText;
-               
+                type.text = delayedText;
+
             }
-            //yield return  new WaitForSeconds(5);
-            //wait=true;
-            
+
+        }
+
+        void ClearText()
+        {
+            MesageText.text = "";
         }
 
         public void TimeCount(float _time )
@@ -186,6 +194,7 @@ namespace RageRunGames.EasyFlyingSystem
             yield return null;
             StartCoroutine(AddScoreCount());
         }
+
         IEnumerator AddScoreCount()
         {   while (currentTime > minTime)
             {

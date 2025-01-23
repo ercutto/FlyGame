@@ -9696,37 +9696,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1359796164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1359796165}
-  m_Layer: 0
-  m_Name: StatsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1359796165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359796164}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360079374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1858428655666842, guid: fbdc15967ab215741a7fe3d32e0049e2, type: 3}
@@ -22956,7 +22925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7771943903994141066, guid: ab230de5f4bf23a40a7c66c1bb06d50c, type: 3}
       propertyPath: Adress
-      value: Address Roof
+      value: Garage Roof floor
       objectReference: {fileID: 0}
     - target: {fileID: 8331379263215674941, guid: ab230de5f4bf23a40a7c66c1bb06d50c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -23143,7 +23112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9158578538676284623, guid: a1118b08dd45d0a44a7a951e319de83d, type: 3}
       propertyPath: Adress
-      value: Address first floor
+      value: Garage first floor
       objectReference: {fileID: 0}
     - target: {fileID: 9158578538676284623, guid: a1118b08dd45d0a44a7a951e319de83d, type: 3}
       propertyPath: targetType
@@ -23161,7 +23130,6 @@ SceneRoots:
   - {fileID: 585798377}
   - {fileID: 1189618970}
   - {fileID: 1028313026}
-  - {fileID: 1359796165}
   - {fileID: 1407554040}
   - {fileID: 1201381016}
   - {fileID: 1878003095}
