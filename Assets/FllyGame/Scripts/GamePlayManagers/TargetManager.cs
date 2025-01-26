@@ -13,6 +13,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         [Space(4)]
         [Header("CheckPoint Game")]
+        public GameObject CheckPointsGameObject = null;
         public Target[] Targets = new Target[10];
         [Header("__________________________________________")]
 
@@ -23,6 +24,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         private GameObject player;
         [Header("Package Delivery")]
+        public GameObject packageGameObject = null;
         public Target[] packegeDeliveryPosition=new Target[2];
         [Header("__________________________________________")]
 
@@ -67,7 +69,7 @@ namespace RageRunGames.EasyFlyingSystem
             Invoke(nameof(WriteToTargetsUI), 2);
 
             player = GameObject.FindWithTag("Player");
-            StartGamTargetMode(1);
+            StartGamTargetMode((int)ScenesManager.instance.gameType);
         }
 
         void LateUpdate()
@@ -226,7 +228,7 @@ namespace RageRunGames.EasyFlyingSystem
         }
 
 
-        void StartGamTargetMode(int gamemode)
+        public void StartGamTargetMode(int gamemode)
         {
             switch (gamemode)
             {
@@ -234,6 +236,8 @@ namespace RageRunGames.EasyFlyingSystem
                     CheckPointGameStart();
                     break;
                 case 1:
+                    CheckPointsGameObject.SetActive(false);
+                    packageGameObject.SetActive(true);
                     Invoke(nameof(PackageDeliveryGameStart),2);
                     break;
 
@@ -245,10 +249,18 @@ namespace RageRunGames.EasyFlyingSystem
 
         void CheckPointGameStart()
         {
-
+            CheckPointsGameObject.SetActive(true);
+            packageGameObject.SetActive(false);
         }
+
+
+
+
+
+
         public void PackageDeliveryGameStart()
         {
+
             if (packageIndex==packages.Length)
             {
                 StatsManager.instance.WriteMessage("Tebrikler bugunku siparisler bitti!...", 0);
@@ -256,11 +268,17 @@ namespace RageRunGames.EasyFlyingSystem
             }
             else
             {
-                packages[packageIndex].gameObject.SetActive(true);
-                StatsManager.instance.WriteMessage("yeni siparis geldi!...", 0);
+              
+                Invoke(nameof(NewPackageOrdered),2);
 
             }
            
+        }
+
+        public void NewPackageOrdered()
+        {
+            StatsManager.instance.WriteMessage("yeni siparis geldi!...", 0);
+            packages[packageIndex].gameObject.SetActive(true);
         }
     }
 }

@@ -812,6 +812,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1473464091}
+        m_TargetAssemblyTypeName: RageRunGames.EasyFlyingSystem.ScenesManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1406011692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504c26ac5bf3b564bbc429eeaee55ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameType: 0
 --- !u!1 &1696905090
 GameObject:
   m_ObjectHideFlags: 0

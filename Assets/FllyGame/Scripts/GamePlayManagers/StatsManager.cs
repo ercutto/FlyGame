@@ -42,6 +42,14 @@ namespace RageRunGames.EasyFlyingSystem
         public float minTime = 0f;
         public bool isPackageDelivered=false;
 
+        [Header("Icons")]
+        public GameObject icon_Address = null;
+        public GameObject icon_newePackage = null;
+        public GameObject icon_missionComplated = null;
+        public GameObject icon_warning = null;
+
+
+
 
         public enum GameMode
         {

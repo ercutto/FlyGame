@@ -10,6 +10,15 @@ namespace RageRunGames.EasyFlyingSystem
             menu,
             game,
         }
+        [SerializeField]
+        public enum _gameType
+        {
+            CheckPointGame,
+            PackagageDelivery,
+           
+        }
+        public _gameType gameType;
+
         private void Awake()
         {
             if (instance)
@@ -22,6 +31,10 @@ namespace RageRunGames.EasyFlyingSystem
             DontDestroyOnLoad(instance);
         }
    
+        public void SelectGameMode(byte gameMode)
+        {
+
+        }
         public void SelectLevel(int Stage)
         {
             if (GameManager.instance)
@@ -29,6 +42,11 @@ namespace RageRunGames.EasyFlyingSystem
                 GameManager.instance.state= (GameManager.states)_states.game;
                 SceneManager.LoadScene(Stage);
                 SceneManager.LoadScene("DisplayScene", LoadSceneMode.Additive);
+                GameManager.instance.state = (GameManager.states)_states.game;
+
+                if(Stage == 2) gameType= _gameType.CheckPointGame;
+
+                if(Stage == 3) gameType = _gameType.PackagageDelivery;
             }
             else
             {
