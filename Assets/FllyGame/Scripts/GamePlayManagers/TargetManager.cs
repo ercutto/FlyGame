@@ -177,7 +177,7 @@ namespace RageRunGames.EasyFlyingSystem
         {
             StatsManager.instance.AddScore(10000);
             if (GameManager.instance)
-            { GameManager.instance.NextStage(); }
+            { GameManager.instance.NextStage(3); }
             else
             {
                 Debug.Log("StageWin!");
@@ -196,7 +196,7 @@ namespace RageRunGames.EasyFlyingSystem
             StatsManager.instance.AddScore(1000);
 
             if (GameManager.instance)
-            { GameManager.instance.NextStage(); }
+            { GameManager.instance.NextStage(2); }
             else
             {
                
@@ -217,9 +217,7 @@ namespace RageRunGames.EasyFlyingSystem
             statManager.WriteMessage("paket kaldirildi!", 0);
             statManager.WriteMessage(_message + msg, 1);
             statManager.TimeCount(deliveryTime);
-            //StatsManager.instance.isPackageDelivered = false;
-            //StatsManager.instance.WriteMessage(_message+msg,1);
-            //StatsManager.instance.TimeCount(deliveryTime);
+           
         }
         public void PackageDeliveredMessage(string msg)
         {
@@ -252,11 +250,6 @@ namespace RageRunGames.EasyFlyingSystem
             CheckPointsGameObject.SetActive(true);
             packageGameObject.SetActive(false);
         }
-
-
-
-
-
 
         public void PackageDeliveryGameStart()
         {

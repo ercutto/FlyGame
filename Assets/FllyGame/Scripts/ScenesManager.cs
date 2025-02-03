@@ -47,6 +47,8 @@ namespace RageRunGames.EasyFlyingSystem
                 if(Stage == 2) gameType= _gameType.CheckPointGame;
 
                 if(Stage == 3) gameType = _gameType.PackagageDelivery;
+
+                
             }
             else
             {

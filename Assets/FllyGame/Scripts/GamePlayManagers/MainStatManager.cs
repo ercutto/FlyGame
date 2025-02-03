@@ -10,8 +10,15 @@ public class MainStatManager : MonoBehaviour
 
     public void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(instance);
+        //instance = this;
+        //DontDestroyOnLoad(instance);
+
+        if (instance)
+            Destroy(gameObject);
+        else
+            instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
 
