@@ -9,11 +9,14 @@ namespace RageRunGames.EasyFlyingSystem
     {
         public static MenuManager instance;
 
+        [Header("Menus")]
         public GameObject StartMenu = null;
         public GameObject packageDeliveryScenemenu = null;
         public GameObject CheckPointgameSceneMenu = null;
-       
 
+        [Header("Buttons")]
+        [Tooltip("This button is not active when StartMenu is active")]
+        public GameObject returnButton = null;
         GameObject[] menus = new GameObject[3];
         public void Awake()
         {
@@ -44,6 +47,8 @@ namespace RageRunGames.EasyFlyingSystem
             {
                 if (menu == i)
                 {
+                    
+
                     GameObject activeMenu= menus[i];
                     activeMenu.SetActive(true);
                     GameObject currentButton = activeMenu.transform.GetChild(0).gameObject;
@@ -53,6 +58,11 @@ namespace RageRunGames.EasyFlyingSystem
                 {
                     menus[i].gameObject.SetActive(false);
                 }
+
+                //bu return tusunu aktif yapiyor.
+
+                if (menu == 0) returnButton.SetActive(false);
+                else returnButton.SetActive(true);
             }
 
         }
