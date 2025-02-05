@@ -79,6 +79,19 @@ namespace RageRunGames.EasyFlyingSystem
 
         public void SelectLevel(int Stage)
         {
+            EventSystem eventSystem = EventSystem.current;
+
+            if (CheckPointgameSceneMenu.gameObject.activeInHierarchy)
+            {
+                GameObject currentButton= CheckPointgameSceneMenu.transform.GetChild(0).gameObject;
+                eventSystem.SetSelectedGameObject(currentButton);
+            }
+            else if (packageDeliveryScenemenu.gameObject.activeInHierarchy)
+            {
+                GameObject currentButton = packageDeliveryScenemenu.transform.GetChild(0).gameObject;
+                eventSystem.SetSelectedGameObject(currentButton);
+            }
+
             if (GameManager.instance)
             {
                ScenesManager.instance.SelectLevel(Stage);

@@ -13,10 +13,13 @@ namespace RageRunGames.EasyFlyingSystem
         public GameObject[] DeliveryLevel = null;
         [HideInInspector]
         public GameObject[] CheckPointLevel = null;
+        [HideInInspector]
         public int SceneInt = 0;
         private bool[] levelBool= {false,false,false};
         bool complated=false;
         public Camera displayCamera = null;
+
+        
         [Serializable]
         public enum states
         {
@@ -36,6 +39,11 @@ namespace RageRunGames.EasyFlyingSystem
             DontDestroyOnLoad(gameObject);
 
             Invoke(nameof(ResetLevels), 2);
+
+           
+            
+
+
         }
            
         public void NextStage(int ToStage)
@@ -51,6 +59,7 @@ namespace RageRunGames.EasyFlyingSystem
         /// </summary>
         public void BackToMainMenu()
         {
+            
             state=states.menu;
             NatureManager.instance.windZonePrefab.SetActive(false);
             int i = (int)ScenesManager.instance.gameType;
@@ -70,13 +79,15 @@ namespace RageRunGames.EasyFlyingSystem
 
             //Invoke(nameof(ResetLevels), 2);
 
-            
+           
+
         }
 
         public void ResetLevels()
         {
+            MainStatManager.instance.CloseCanvas();
 
-            DeliveryLevel=MenuManager.instance.DeliveryLevel;
+            DeliveryLevel =MenuManager.instance.DeliveryLevel;
             CheckPointLevel = MenuManager.instance.CheckPointLevel;
             UnlockLevel(DeliveryLevel, 0);
             UnlockLevel(CheckPointLevel, 0);
@@ -136,6 +147,8 @@ namespace RageRunGames.EasyFlyingSystem
             levelState.keypadClose.gameObject.SetActive(keypadClose);
             levelState.keypadOpen.gameObject.SetActive(keypadOpen);
             go.SetActive(true);
+
+            MainStatManager.instance.CloseCanvas();
         }
         //public void SetBoolsOfLevelStates(GameObject[] array,int ComplatedLevel)
         //{

@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FllyGame/GamePlayScenes/Stage_4.unity
     guid: 3eaa09ccc3591004089cf9f04f43d662
+  - enabled: 1
+    path: Assets/FllyGame/MenuScenes/StatsScene.unity
+    guid: 8571c135a29e33d4a9949ecc89b8796a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
