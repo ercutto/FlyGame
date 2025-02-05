@@ -4343,6 +4343,7 @@ MonoBehaviour:
   - {fileID: 0}
   packed: {fileID: 0}
   packageIndex: 0
+  sceneIndex: 0
   playerNavigation: {fileID: 0}
   targetType: 0
 --- !u!4 &1052982594 stripped

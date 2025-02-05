@@ -6447,6 +6447,7 @@ MonoBehaviour:
   - {fileID: 1428438183}
   packed: {fileID: 0}
   packageIndex: 0
+  sceneIndex: 2
   playerNavigation: {fileID: 263370822}
   targetType: 0
 --- !u!1 &1029025911 stripped

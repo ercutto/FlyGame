@@ -15,6 +15,7 @@ namespace RageRunGames.EasyFlyingSystem
         [Header("CheckPoint Game")]
         public GameObject CheckPointsGameObject = null;
         public Target[] Targets = new Target[10];
+
         [Header("__________________________________________")]
 
         [HideInInspector]
@@ -34,6 +35,7 @@ namespace RageRunGames.EasyFlyingSystem
         public GameObject packed=null;
         [HideInInspector]
         public int packageIndex = 0;
+        public int sceneIndex = 0;
 
         [Header("__________________________________________")]
 
@@ -76,6 +78,11 @@ namespace RageRunGames.EasyFlyingSystem
         {
             if (cam)
                 RotateTergetsUIToCamera();
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StageWin();
+            }
         }
 
         public void WriteToTargetsUI()
@@ -136,7 +143,7 @@ namespace RageRunGames.EasyFlyingSystem
                     if (i == Targets.Length - 1 && Targets[i].destinationReached)
                     {
 
-                        WinStage("win!!");
+                        CheckPointGameWin("win!!");
 
                     }
                 }
@@ -177,7 +184,10 @@ namespace RageRunGames.EasyFlyingSystem
         {
             StatsManager.instance.AddScore(10000);
             if (GameManager.instance)
-            { GameManager.instance.NextStage(3); }
+            { //GameManager.instance.NextStage(3);
+                GameManager.instance.SceneInt=sceneIndex+1;
+                GameManager.instance.BackToMainMenu();
+            }
             else
             {
                 Debug.Log("StageWin!");
@@ -185,7 +195,7 @@ namespace RageRunGames.EasyFlyingSystem
             }
         }
 
-        void WinStage(string msg)
+        void CheckPointGameWin(string msg)
         {
             for (int i = 0; i < Targets.Length; i++)
             {
@@ -257,6 +267,8 @@ namespace RageRunGames.EasyFlyingSystem
             if (packageIndex==packages.Length)
             {
                 StatsManager.instance.WriteMessage("Tebrikler bugunku siparisler bitti!...", 0);
+                
+                StageWin();
                 return;
             }
             else

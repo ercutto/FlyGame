@@ -101,7 +101,7 @@ namespace RageRunGames.EasyFlyingSystem
 
         void SecurityCameraCheck()
         {
-            Debug.Log("camera  " + cameraSeesPlayer);
+            //Debug.Log("camera  " + cameraSeesPlayer);
 
             if (cameraSeesPlayer)
             {

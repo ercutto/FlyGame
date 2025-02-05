@@ -16,7 +16,17 @@ namespace RageRunGames.EasyFlyingSystem
 
         [Header("Buttons")]
         [Tooltip("This button is not active when StartMenu is active")]
+
+        [Header("Level Buttons")]
+        [Space(4)]
+        [Header("DeliveryLevels")]
+        public GameObject[] DeliveryLevel = new GameObject[2];
+        [Header("CheckPointLevels")]
+        public GameObject[] CheckPointLevel = new GameObject[2];
+
+        [Space(5)]
         public GameObject returnButton = null;
+
         GameObject[] menus = new GameObject[3];
         public void Awake()
         {
