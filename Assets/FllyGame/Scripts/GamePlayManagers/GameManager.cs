@@ -17,14 +17,17 @@ namespace RageRunGames.EasyFlyingSystem
         public int SceneInt = 0;
         private bool[] levelBool= {false,false,false};
         bool complated=false;
+        private bool[] CPlevelBool = { false, false, false };
+        bool CPcomplated = false;
         public Camera displayCamera = null;
-
+        public int _gameMode = 0;
         
         [Serializable]
         public enum states
         {
             menu,
             game,
+            none,
         }
         public states state;
         #endregion
@@ -39,10 +42,6 @@ namespace RageRunGames.EasyFlyingSystem
             DontDestroyOnLoad(gameObject);
 
             Invoke(nameof(ResetLevels), 2);
-
-           
-            
-
 
         }
            
@@ -67,7 +66,8 @@ namespace RageRunGames.EasyFlyingSystem
             if (i == 0)
             {
                 //checkpoint
-                Debug.Log("Checkpoint");
+               
+                Invoke(nameof(CheckPointGameLevels), 1);
             }
             if (i == 1)
             {
@@ -77,22 +77,13 @@ namespace RageRunGames.EasyFlyingSystem
                Invoke(nameof(DeliveryGameLevels),1);
             }
 
-            //Invoke(nameof(ResetLevels), 2);
+            ScenesManager.instance.gameType = (ScenesManager._gameType)states.none;
 
-           
-
+            Invoke(nameof(CheckLevelsComplatedOrNot),1);
         }
 
-        public void ResetLevels()
-        {
-            MainStatManager.instance.CloseCanvas();
 
-            DeliveryLevel =MenuManager.instance.DeliveryLevel;
-            CheckPointLevel = MenuManager.instance.CheckPointLevel;
-            UnlockLevel(DeliveryLevel, 0);
-            UnlockLevel(CheckPointLevel, 0);
-        }
-
+       
         void DeliveryGameLevels()
         {
             DeliveryLevel = MenuManager.instance.DeliveryLevel;
@@ -102,59 +93,100 @@ namespace RageRunGames.EasyFlyingSystem
                 complated = true;
 
             if (!complated)
-                UnlockLevel(DeliveryLevel, SceneInt);
+                UnlockLevel(DeliveryLevel, SceneInt,levelBool, true);
             else
             {
 
-                UnlockLevel(DeliveryLevel, DeliveryLevel.Length);
+                UnlockLevel(DeliveryLevel, DeliveryLevel.Length,levelBool,true);
             }
+
+            
         }
 
-        public void UnlockLevel(GameObject[] array, int unlockedLevel)
+        void CheckPointGameLevels()
+        {
+            CheckPointLevel = MenuManager.instance.CheckPointLevel;
+           
+            //böklumlerin acik olup olmadigini kopntrol eder
+            if (CPlevelBool[0] == true && CPlevelBool[1] == true && CPlevelBool[2] == true)
+                CPcomplated = true;
+
+            if (!CPcomplated)
+                UnlockLevel(CheckPointLevel, SceneInt,CPlevelBool,true);
+            else
+            {
+
+                UnlockLevel(CheckPointLevel, CheckPointLevel.Length,CPlevelBool, true);
+            }
+
+
+            
+        }
+
+        public void CheckLevelsComplatedOrNot()
+        {
+            DeliveryLevel = MenuManager.instance.DeliveryLevel;
+            CheckPointLevel = MenuManager.instance.CheckPointLevel;
+
+            Invoke(nameof(SetLevelsCurrentStates), 1);
+        }
+
+
+        void SetLevelsCurrentStates()
+        {
+            ShowLevelStates(CPlevelBool, CheckPointLevel);
+            ShowLevelStates(levelBool, DeliveryLevel);
+        }
+
+        public void UnlockLevel(GameObject[] array, int unlockedLevel, bool[] bools, bool unlocked)
         {
            
             for (int i = 0; i < array.Length; i++)
             {
-                GameObject go= array[i].gameObject;
-                go.SetActive(false);
-                Button _button = array[i].GetComponent<Button>();
-                LevelState _levelState = array[i].GetComponent<LevelState>();
+                
 
                 if (i <= unlockedLevel)
-                {                  
-                    Color color = Color.white;
-                    ApplyStatesToButtons(_button, true, _levelState, color, true, false, true,go);
-
-                    levelBool[i]=true;
+                {
+                    LevelState _levelState = array[i].GetComponent<LevelState>();
+                  
+                    _levelState.Unlock();
+                     bools[i]=unlocked;
                 }
                 else
-                {                 
-                    Color color = Color.gray;
-                    ApplyStatesToButtons(_button, false, _levelState, color, false, true, false,go);
-
+                {       
+                    LevelState _levelState = array[i].GetComponent<LevelState>();
+                    _levelState.Lock();
+                    bools[i] = false;
                 }
+                
             }
  
         }
 
-       
-        //levelleri secerken guncel durumlarina göre:tus aktif jada pasif, rengi,acik mi,acik kilitmi yoksa kapali kilitmi gösteriliyor
-        void ApplyStatesToButtons(Button button,bool enableButton, LevelState levelState, Color currentColor,bool isOpen ,bool keypadClose, bool keypadOpen,GameObject go)
+        void ShowLevelStates(bool[] levels, GameObject[] arrays)
         {
-            button.enabled = enableButton;
-            levelState.image.color = currentColor;
-            levelState.isOpen = isOpen;
-            levelState.keypadClose.gameObject.SetActive(keypadClose);
-            levelState.keypadOpen.gameObject.SetActive(keypadOpen);
-            go.SetActive(true);
 
-            MainStatManager.instance.CloseCanvas();
+            for (int i = 0; i < levels.Length; i++)
+            {
+                if (levels[i] == true)
+                {
+                    arrays[i].GetComponent<LevelState>().Unlock();
+                }
+                else
+                {
+                    arrays[i].GetComponent<LevelState>().Lock();
+                }
+            }
         }
-        //public void SetBoolsOfLevelStates(GameObject[] array,int ComplatedLevel)
-        //{
-        //    array[ComplatedLevel].GetComponent<LevelState>().isOpen = true;
-        //    array[ComplatedLevel+1].GetComponent<LevelState>().isOpen = true;
-        //}
 
+        public void ResetLevels()
+        {
+            MainStatManager.instance.CloseCanvas();
+
+            DeliveryLevel = MenuManager.instance.DeliveryLevel;
+            CheckPointLevel = MenuManager.instance.CheckPointLevel;
+            UnlockLevel(DeliveryLevel, 0, levelBool, true);
+            UnlockLevel(CheckPointLevel, 0, CPlevelBool, true);
+        }
     }
 }

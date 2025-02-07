@@ -15,6 +15,7 @@ namespace RageRunGames.EasyFlyingSystem
         {
             CheckPointGame,
             PackagageDelivery,
+            None,
            
         }
         public _gameType gameType;
@@ -31,10 +32,7 @@ namespace RageRunGames.EasyFlyingSystem
             DontDestroyOnLoad(instance);
         }
    
-        public void SelectGameMode(byte gameMode)
-        {
-
-        }
+       
         public void SelectLevel(int Stage)
         {
             if (GameManager.instance)
@@ -44,9 +42,9 @@ namespace RageRunGames.EasyFlyingSystem
                 SceneManager.LoadScene("DisplayScene", LoadSceneMode.Additive);
                 GameManager.instance.state = (GameManager.states)_states.game;
 
-                if(Stage == 2) gameType= _gameType.CheckPointGame;
+                if(Stage == 2|| Stage == 7|| Stage == 8) gameType= _gameType.CheckPointGame;
 
-                if(Stage == 3) gameType = _gameType.PackagageDelivery;
+                if(Stage == 3|| Stage == 5|| Stage == 6) gameType = _gameType.PackagageDelivery;
 
                 
             }

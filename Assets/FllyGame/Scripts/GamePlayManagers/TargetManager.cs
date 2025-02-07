@@ -42,9 +42,9 @@ namespace RageRunGames.EasyFlyingSystem
         //sonra sill
         public PlayerNavigation playerNavigation;
 
-       
+        int gameMode;
 
-        [SerializeField]
+         [SerializeField]
         public enum TargetType
         {   none,
             package,
@@ -71,7 +71,9 @@ namespace RageRunGames.EasyFlyingSystem
             Invoke(nameof(WriteToTargetsUI), 2);
 
             player = GameObject.FindWithTag("Player");
-            StartGamTargetMode((int)ScenesManager.instance.gameType);
+
+            gameMode = (int)ScenesManager.instance.gameType;
+            StartGamTargetMode(gameMode);
         }
 
         void LateUpdate()
@@ -176,7 +178,7 @@ namespace RageRunGames.EasyFlyingSystem
         public void PlayerCouldLiftDrone()
         {
             StatsManager.instance.AddScore(100);
-            Debug.Log("Player could Lift!");
+           // Debug.Log("Player could Lift!");
 
         }
 
@@ -186,8 +188,9 @@ namespace RageRunGames.EasyFlyingSystem
             if (GameManager.instance)
             { //GameManager.instance.NextStage(3);
                 GameManager.instance.SceneInt=sceneIndex+1;
-                MainStatManager.instance.OpenCanvas();
-                //GameManager.instance.BackToMainMenu();
+          
+                //MainStatManager.instance.OpenCanvas();
+                GameManager.instance.BackToMainMenu();
             }
             else
             {

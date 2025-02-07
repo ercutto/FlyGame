@@ -12,23 +12,26 @@ EditorBuildSettings:
     path: Assets/FllyGame/GamePlayScenes/DisplayScene.unity
     guid: a7c1a614fbe91a248b31b613ec8fdf29
   - enabled: 1
-    path: Assets/FllyGame/GamePlayScenes/Stage_1.unity
+    path: Assets/FllyGame/GamePlayScenes/CheckPOintGameStages/Stage_1.unity
     guid: 44bab225a69a9a440b6701086b9bb3c9
   - enabled: 1
-    path: Assets/FllyGame/GamePlayScenes/Stage_2.unity
+    path: Assets/FllyGame/GamePlayScenes/DeliveryGamewStages/Stage_2.unity
     guid: be9033e49e869144f8e30109ff2edcf7
   - enabled: 1
     path: Assets/FllyGame/MenuScenes/MainMenuScene.unity
     guid: 00c091236732e9d4abc8c35978197a18
   - enabled: 1
-    path: Assets/FllyGame/GamePlayScenes/Stage_3.unity
+    path: Assets/FllyGame/GamePlayScenes/DeliveryGamewStages/Stage_3.unity
     guid: f7485463afc415c458ba414ff50009e6
   - enabled: 1
-    path: Assets/FllyGame/GamePlayScenes/Stage_4.unity
+    path: Assets/FllyGame/GamePlayScenes/DeliveryGamewStages/Stage_4.unity
     guid: 3eaa09ccc3591004089cf9f04f43d662
   - enabled: 1
-    path: Assets/FllyGame/MenuScenes/StatsScene.unity
-    guid: 8571c135a29e33d4a9949ecc89b8796a
+    path: Assets/FllyGame/GamePlayScenes/CheckPOintGameStages/Stage_2.unity
+    guid: 6f3dfad757fe1564d8d4716cb3e5040e
+  - enabled: 1
+    path: Assets/FllyGame/GamePlayScenes/CheckPOintGameStages/Stage_3.unity
+    guid: 8c59e5caa76d34c42951be2214931376
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

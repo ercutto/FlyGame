@@ -48,11 +48,11 @@ public class MainStatManager : MonoBehaviour
             case 1:
                 _score = score;
                 scoreText.text = _score.ToString();
-                Debug.Log("Score " + _score);
+                //Debug.Log("Score " + _score);
                 break;
             case 2:
                 postmanscore = score;
-                Debug.Log("postmanscore " + postmanscore);
+                //Debug.Log("postmanscore " + postmanscore);
                 break;
 
         }
@@ -74,4 +74,6 @@ public class MainStatManager : MonoBehaviour
     {
         GameManager.instance.BackToMainMenu();
     }
+
+    
 }
