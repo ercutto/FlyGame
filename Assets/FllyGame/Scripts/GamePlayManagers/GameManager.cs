@@ -158,7 +158,8 @@ namespace RageRunGames.EasyFlyingSystem
                     _levelState.Lock();
                     bools[i] = false;
                 }
-                
+
+                array[i].GetComponent<LevelState>().InvokeActivate();
             }
  
         }
@@ -176,6 +177,8 @@ namespace RageRunGames.EasyFlyingSystem
                 {
                     arrays[i].GetComponent<LevelState>().Lock();
                 }
+
+                arrays[i].GetComponent<LevelState>().InvokeActivate();
             }
         }
 
