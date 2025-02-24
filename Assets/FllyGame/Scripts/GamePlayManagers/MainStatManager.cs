@@ -13,6 +13,7 @@ public class MainStatManager : MonoBehaviour
     public Text scoreText = null;
     public GameObject canvas = null;
     public Button finishButton = null;
+    public Text gameName = null;
     public void Awake()
     {
         //instance = this;
@@ -42,17 +43,21 @@ public class MainStatManager : MonoBehaviour
         switch (gameMode)
         {
             case 0:
-
-            default:
+                _score = score;
+                gameName.text = "Checkpoint game";
+                scoreText.text = _score.ToString();
+           
                 break;
             case 1:
-                _score = score;
-                scoreText.text = _score.ToString();
-                //Debug.Log("Score " + _score);
+
+                gameName.text = "Deliver Game";
+                postmanscore = score;
+                scoreText.text = postmanscore.ToString();
+
                 break;
             case 2:
-                postmanscore = score;
-                //Debug.Log("postmanscore " + postmanscore);
+               
+               
                 break;
 
         }
@@ -61,12 +66,18 @@ public class MainStatManager : MonoBehaviour
 
     public void OpenCanvas()
     {
+        
         canvas.SetActive(true);
         EventSystem eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(finishButton.gameObject);
     }
     public void CloseCanvas()
     {
+        Invoke(nameof(CanvasClosing),1.5f);
+    }
+    void CanvasClosing()
+    {
+        scoreText.text = "";
         canvas.SetActive(false);
     }
 

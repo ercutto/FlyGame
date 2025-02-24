@@ -189,8 +189,8 @@ namespace RageRunGames.EasyFlyingSystem
             { //GameManager.instance.NextStage(3);
                 GameManager.instance.SceneInt=sceneIndex+1;
           
-                //MainStatManager.instance.OpenCanvas();
-                GameManager.instance.BackToMainMenu();
+                MainStatManager.instance.OpenCanvas();
+                //GameManager.instance.BackToMainMenu();
             }
             else
             {

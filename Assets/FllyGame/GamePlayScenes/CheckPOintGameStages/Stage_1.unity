@@ -1232,7 +1232,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 500
-  field of view: 13.334884
+  field of view: 42.61157
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1259,7 +1259,7 @@ Transform:
   m_GameObject: {fileID: 342553554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.034, y: 0.214, z: -13.75}
+  m_LocalPosition: {x: -0.034, y: 0.214, z: -8.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9261,7 +9261,7 @@ Transform:
   m_GameObject: {fileID: 1822823762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.034, y: 0.214, z: -13.75}
+  m_LocalPosition: {x: -0.034, y: 0.214, z: -8.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9283,7 +9283,7 @@ MonoBehaviour:
   ShoulderOffset: {x: 0, y: 0.25, z: 0}
   VerticalArmLength: 0.17
   CameraSide: 1
-  CameraDistance: 10
+  CameraDistance: 5
   AvoidObstacles:
     Enabled: 1
     CollisionFilter:

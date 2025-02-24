@@ -85,6 +85,19 @@ namespace RageRunGames.EasyFlyingSystem
             score += add;
             TypeTexts(scoreText, score);
             mode = (byte)(MainStatManager.Stats)gameMode;
+            if (ScenesManager.instance.gameType == 0)
+            {
+              
+                mode = 0;
+                Debug.Log("Mode "+ mode);
+            }
+            if ((int)ScenesManager.instance.gameType == 1)
+            {
+                mode = 1;
+                Debug.Log("Mode " + mode);
+
+            }
+
             if (MainStatManager.instance != null)
             {
                 MainStatManager.instance.Score(score, mode);
