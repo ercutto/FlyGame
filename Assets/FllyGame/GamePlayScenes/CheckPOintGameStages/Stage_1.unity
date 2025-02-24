@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9365fb39830774e9947d0e2702efda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 1
+  isTesting: 0
   wind: {fileID: 0}
   drones:
   - {fileID: 162173913}

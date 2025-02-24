@@ -58,7 +58,7 @@ namespace RageRunGames.EasyFlyingSystem
         /// </summary>
         public void BackToMainMenu()
         {
-            
+            Debug.Log("GameManager.gamemode "+_gameMode);
             state=states.menu;
             NatureManager.instance.windZonePrefab.SetActive(false);
             int i = (int)ScenesManager.instance.gameType;
