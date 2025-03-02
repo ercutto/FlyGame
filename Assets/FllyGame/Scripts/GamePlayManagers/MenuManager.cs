@@ -26,8 +26,10 @@ namespace RageRunGames.EasyFlyingSystem
 
         [Space(5)]
         public GameObject returnButton = null;
+        
 
         GameObject[] menus = new GameObject[3];
+     
         public void Awake()
         {
             //
@@ -42,10 +44,12 @@ namespace RageRunGames.EasyFlyingSystem
             menus[1]=CheckPointgameSceneMenu;
             menus[2]=packageDeliveryScenemenu;
 
-            SelectMenu(0);
+            
+            //Menu Game managerden Aciliyor
+           
         }
 
-
+        
         public void SelectMenu(int menu)
         {
             

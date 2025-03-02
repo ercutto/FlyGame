@@ -194,7 +194,7 @@ namespace RageRunGames.EasyFlyingSystem
             }
             else
             {
-                Debug.Log("StageWin!");
+                Debug.Log("AddStage!");
                 ScenesManager.instance.SelectLevel(3);
             }
         }

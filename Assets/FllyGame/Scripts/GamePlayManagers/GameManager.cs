@@ -1,4 +1,5 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,7 +22,8 @@ namespace RageRunGames.EasyFlyingSystem
         bool CPcomplated = false;
         public Camera displayCamera = null;
         public int _gameMode = 0;
-        
+
+        int wichGameModeplayed = 0;
         [Serializable]
         public enum states
         {
@@ -33,18 +35,38 @@ namespace RageRunGames.EasyFlyingSystem
         #endregion
         public void Awake()
         {
-            //Baska game Manager varsa o game manageri yok eder
-            if (instance)
-                Destroy(gameObject);
-            else
+            ////Baska game Manager varsa o game manageri yok eder
+            //if (instance)
+            //    Destroy(gameObject);
+            //else
+            //    instance = this;
+
+            //DontDestroyOnLoad(gameObject);
+
+            if (instance == null) // If there is no instance already
+            {
+                DontDestroyOnLoad(gameObject); // Keep the GameObject, this component is attached to, across different scenes
                 instance = this;
+            }
+            else if (instance != this) // If there is already an instance and it's not `this` instance
+            {
+                Destroy(gameObject); // Destroy the GameObject, this component is attached to
+            }
 
-            DontDestroyOnLoad(gameObject);
 
-            Invoke(nameof(ResetLevels), 2);
-
-        }
            
+            Invoke(nameof(ResetLevels), 2);
+            Invoke(nameof(CallMenu), 2);
+        }
+
+        public void CallMenu()//oyun acilinca aciilacak menu
+        {
+            MenuManager.instance.SelectMenu(0);
+        }
+        public void CallMenuAfterAStagePlayed(int menu)//bölum gectikce acilacak alt menu
+        {
+            MenuManager.instance.SelectMenu(menu);
+        }
         public void NextStage(int ToStage)
         {
             ScenesManager.instance.SelectLevel(ToStage);
@@ -58,16 +80,18 @@ namespace RageRunGames.EasyFlyingSystem
         /// </summary>
         public void BackToMainMenu()
         {
-            Debug.Log("GameManager.gamemode "+_gameMode);
+            
             state=states.menu;
             NatureManager.instance.windZonePrefab.SetActive(false);
             int i = (int)ScenesManager.instance.gameType;
+          
             SceneManager.LoadScene(4);
             if (i == 0)
             {
                 //checkpoint
                
                 Invoke(nameof(CheckPointGameLevels), 1);
+                
             }
             if (i == 1)
             {
@@ -77,9 +101,13 @@ namespace RageRunGames.EasyFlyingSystem
                Invoke(nameof(DeliveryGameLevels),1);
             }
 
+            wichGameModeplayed = i + 1;
+             
             ScenesManager.instance.gameType = (ScenesManager._gameType)states.none;
 
             Invoke(nameof(CheckLevelsComplatedOrNot),1);
+
+            
         }
 
 
@@ -100,7 +128,7 @@ namespace RageRunGames.EasyFlyingSystem
                 UnlockLevel(DeliveryLevel, DeliveryLevel.Length,levelBool,true);
             }
 
-            
+            CallMenuAfterAStagePlayed(wichGameModeplayed);
         }
 
         void CheckPointGameLevels()
@@ -120,7 +148,7 @@ namespace RageRunGames.EasyFlyingSystem
             }
 
 
-            
+            CallMenuAfterAStagePlayed(wichGameModeplayed);
         }
 
         public void CheckLevelsComplatedOrNot()
