@@ -6,26 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/FllyGame/MenuScenes/MainMenuScene.unity
+    guid: 00c091236732e9d4abc8c35978197a18
   - enabled: 1
     path: Assets/FllyGame/GamePlayScenes/DisplayScene.unity
     guid: a7c1a614fbe91a248b31b613ec8fdf29
   - enabled: 1
-    path: Assets/FllyGame/GamePlayScenes/CheckPOintGameStages/Stage_1.unity
-    guid: 44bab225a69a9a440b6701086b9bb3c9
-  - enabled: 1
     path: Assets/FllyGame/GamePlayScenes/DeliveryGamewStages/Stage_2.unity
     guid: be9033e49e869144f8e30109ff2edcf7
-  - enabled: 1
-    path: Assets/FllyGame/MenuScenes/MainMenuScene.unity
-    guid: 00c091236732e9d4abc8c35978197a18
   - enabled: 1
     path: Assets/FllyGame/GamePlayScenes/DeliveryGamewStages/Stage_3.unity
     guid: f7485463afc415c458ba414ff50009e6
   - enabled: 1
     path: Assets/FllyGame/GamePlayScenes/DeliveryGamewStages/Stage_4.unity
     guid: 3eaa09ccc3591004089cf9f04f43d662
+  - enabled: 1
+    path: Assets/FllyGame/GamePlayScenes/CheckPOintGameStages/Stage_1.unity
+    guid: 44bab225a69a9a440b6701086b9bb3c9
   - enabled: 1
     path: Assets/FllyGame/GamePlayScenes/CheckPOintGameStages/Stage_2.unity
     guid: 6f3dfad757fe1564d8d4716cb3e5040e

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.MaterialProperty;
 namespace RageRunGames.EasyFlyingSystem
 {
     public class Target : MonoBehaviour

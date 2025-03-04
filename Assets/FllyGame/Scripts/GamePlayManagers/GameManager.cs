@@ -85,7 +85,7 @@ namespace RageRunGames.EasyFlyingSystem
             NatureManager.instance.windZonePrefab.SetActive(false);
             int i = (int)ScenesManager.instance.gameType;
           
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(0);
             if (i == 0)
             {
                 //checkpoint

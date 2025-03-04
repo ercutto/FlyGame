@@ -42,9 +42,9 @@ namespace RageRunGames.EasyFlyingSystem
                 SceneManager.LoadScene("DisplayScene", LoadSceneMode.Additive);
                 GameManager.instance.state = (GameManager.states)_states.game;
 
-                if(Stage == 2|| Stage == 7|| Stage == 8) gameType= _gameType.CheckPointGame;
+                if(Stage == 5|| Stage == 6|| Stage == 7) gameType= _gameType.CheckPointGame;
 
-                if(Stage == 3|| Stage == 5|| Stage == 6) gameType = _gameType.PackagageDelivery;
+                if(Stage == 2|| Stage == 3|| Stage == 4) gameType = _gameType.PackagageDelivery;
 
                 
             }
